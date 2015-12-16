@@ -1,0 +1,59 @@
+.page-header {
+  margin-bottom: 40px;
+}
+
+.page-header, .section-header {
+  // layout
+  @include clearfix;
+  overflow: hidden;
+  text-align: center;
+
+  h1, h2, h3, h4, h5, h6 {
+    // reset
+    @include reset-normalize((
+      margin: 0 0 10px
+    )...);
+  }
+
+  p {
+    // reset
+    @include reset-normalize((
+      margin: 0 0 20px
+    )...);
+
+    font-size: 1em; /* 16px */
+  }
+}
+
+.section-header {
+  margin-bottom: 20px;
+
+  h1 {
+    display: table;
+    white-space: nowrap;
+    width: 100%;
+
+    &:after {
+      left: 10px;
+    }
+
+    &:after, &:before {
+      border-top: 1px solid $section-header-border;
+      content: "";
+      display: table-cell;
+      position: relative;
+      top: 0.5em;
+      width: 43%;
+    }
+
+    &:before {
+      right: 10px;
+    }
+  }
+
+  h2 {
+    &.primary {
+      color: $primary-heading-text-alt;
+    }
+  }
+}

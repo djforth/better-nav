@@ -1,0 +1,25 @@
+@include breakpoint($mobile-breakpoint) {
+  body {
+    &.nav-open {
+      right: percentage(2/3);
+    }
+  }
+}
+
+@include breakpoint($mobile-and-tablet-breakpoint) {
+  body {
+    // layout
+    right: 0;
+
+    // styling
+    @include transition(right 0.2s ease-in-out);
+  }
+}
+
+@include breakpoint($tablet-breakpoint) {
+  body {
+    &.nav-open {
+      right: percentage(1/2);
+    }
+  }
+}

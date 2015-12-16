@@ -1,0 +1,23 @@
+{
+  "name": "better-nav",
+  "description": "nav for Better website (Not better nav)",
+  "main": "index.js",
+  "authors": [
+    "A Stainforth"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/djforth/better-nav",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.7",
+    "bourbon": "~4.2.6",
+    "breakpoint-sass": "~2.6.1"  }
+}

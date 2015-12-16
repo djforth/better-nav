@@ -1,0 +1,28 @@
+header {
+  &.main {
+    background-color: $header-bg;
+
+    .button {
+      float: right;
+    }
+
+    .header-search {
+      // layout
+      float: right;
+
+      // styling
+      color: $header-search-text;
+      text-decoration: none;
+
+      svg {
+        position: relative;
+        top: 10px;
+      }
+    }
+
+    .logo {
+      float: left;
+      padding: 10px 0;
+    }
+  }
+}

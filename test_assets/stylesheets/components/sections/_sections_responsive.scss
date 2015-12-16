@@ -1,0 +1,17 @@
+@include breakpoint($mobile-breakpoint) {
+
+}
+
+@include breakpoint($tablet-breakpoint) {
+  
+}
+
+@include breakpoint($desktop-breakpoint) {
+  .page-header {
+    p {
+      @include span(7.2 of 12);
+      @include prefix(2.4 of 12);
+      @include suffix(2.4 of 12);
+    }
+  }
+}

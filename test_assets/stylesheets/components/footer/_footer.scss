@@ -1,0 +1,88 @@
+footer {
+  &.main {
+    // layout
+    overflow: hidden;
+    padding: 20px 0;
+  
+    // styling
+    background-color: $footer-bg;
+    border-top: 4px solid $footer-border;
+
+    h1 {
+      // reset
+      @include reset-normalize((
+        margin: 0 0 5px
+      )...);
+    }
+
+    li, ul {
+      // reset
+      @include reset-normalize;
+    }
+
+    section {
+      &.footer-social {
+        a {
+          margin-bottom: 10px;
+        }
+
+        li {
+          float: left;
+
+          &.twitter {
+            margin-right: 10px;
+          }
+        }
+
+        ul {
+          @include clearfix;
+        }
+      }
+
+      &.sign-up {
+        margin-bottom: 40px;
+
+        h1 {
+          display: block;
+        }
+
+        input[type="submit"] {
+          float: right;
+          margin-left: 20px;
+        }
+
+        label {
+          display: none;
+        }
+
+        .form-row {
+          overflow: hidden;
+        }
+      }
+    }
+
+    .column-one, .column-two {
+      a {
+        color: $footer-link-text;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .footer-footer {
+      @include bleed-x(1000px);
+      float: left;
+      margin-top: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      width: 100%;
+
+      a {
+        color: $footer-footer-link-text;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.button-toggle {
+  // layout
+  @include bleed-x(10px);
+  display: block;
+  padding: 20px 30px;
+  position: relative;
+
+  // styling
+  background-color: $membership-toggle-bg;
+  border-bottom: 1px solid $membership-toggle-border;
+  color: $membership-toggle-text;
+  text-decoration: none;
+
+  &.active {
+    background-color: $membership-toggle-bg-active;
+    border-bottom: 1px solid $membership-toggle-border-active;
+    color: $membership-toggle-text-active;
+
+    .divider {
+      background-color: $membership-toggle-divider-bg-active;
+    }   
+  }
+
+  .divider {
+    // layout
+    display: block;
+    height: 70%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 80px;
+    bottom: 0;
+    width: 1px;
+
+    // styling
+    background-color: $membership-toggle-divider-bg;
+  }
+
+  .icon {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    bottom: 0;
+  }
+}

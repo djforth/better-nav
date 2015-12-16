@@ -1,0 +1,115 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$news-calendar-name: 'news-calendar';
+$news-calendar-x: 0px;
+$news-calendar-y: 0px;
+$news-calendar-offset-x: 0px;
+$news-calendar-offset-y: 0px;
+$news-calendar-width: 21px;
+$news-calendar-height: 21px;
+$news-calendar-total-width: 41px;
+$news-calendar-total-height: 21px;
+$news-calendar-image: 'sprites/news-icons.png';
+$news-calendar: (0px, 0px, 0px, 0px, 21px, 21px, 41px, 21px, 'sprites/news-icons.png', 'news-calendar', );
+$news-tag-name: 'news-tag';
+$news-tag-x: 21px;
+$news-tag-y: 0px;
+$news-tag-offset-x: -21px;
+$news-tag-offset-y: 0px;
+$news-tag-width: 20px;
+$news-tag-height: 20px;
+$news-tag-total-width: 41px;
+$news-tag-total-height: 21px;
+$news-tag-image: 'sprites/news-icons.png';
+$news-tag: (21px, 0px, -21px, 0px, 20px, 20px, 41px, 21px, 'sprites/news-icons.png', 'news-tag', );
+$spritesheet-width: 41px;
+$spritesheet-height: 21px;
+$spritesheet-image: 'sprites/news-icons.png';
+$spritesheet-sprites: ($news-calendar, $news-tag, );
+$spritesheet: (41px, 21px, 'sprites/news-icons.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-news-calendar {
+  background-image: image-url('sprites/news-icons.png');
+  background-position: 0px 0px;
+  width: 21px;
+  height: 21px;
+}
+.icon-news-tag {
+  background-image: image-url('sprites/news-icons.png');
+  background-position: -21px 0px;
+  width: 20px;
+  height: 20px;
+}

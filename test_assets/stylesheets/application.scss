@@ -1,0 +1,44 @@
+
+@import "normalize.css";
+
+@import "bourbon/app/assets/stylesheets/bourbon";
+
+@import "breakpoint-sass/stylesheets/breakpoint",
+        "susy/sass/susy";
+
+// Sprites
+@import "sprites/**/*";
+
+// Base and Setup
+@import "utils/mixins",
+        "base/susy",
+        "base/breakpoints",
+        "utils/colours",
+        "base/forms",
+        "base/typography",
+        "base/global",
+        "base/global_responsive";
+
+
+// Components
+@import "components/**/*";
+
+// .clearfix{
+//   @include clearfix;
+// }
+
+.touchNav{
+  width:90%;
+  height:60px;
+  overflow:hidden;
+
+
+  .navitems{
+    margin:0;
+    padding:0;
+    li{
+      display: inline-block;
+      padding:20px;
+    }
+  }
+}

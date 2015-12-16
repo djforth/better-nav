@@ -1,0 +1,147 @@
+#carousel {
+  overflow: hidden;
+  position: relative;
+
+  .carousel-arrows-container {
+    // reset
+    @include reset-normalize;
+
+    // layout
+    position: absolute;
+    top: 42%;
+    width: 100%;
+
+    li {
+      // layout
+      position: absolute;
+
+      // styling
+      @include transition(all 0.2s ease-in-out);
+
+      &.previous {
+        left: -4px;
+
+        &:hover {
+          left: 0;
+        }
+
+        a {
+          border-radius: 0 5px 5px 0;
+        }
+      }
+
+      &.next {
+        right: -4px;
+
+        &:hover {
+          right: 0;
+        }
+
+        a {
+          border-radius: 5px 0 0 5px;
+        }
+      }
+
+      a {
+        // layout
+        display: block;
+
+        // styling
+        background-color: $carousel-arrow-bg;
+        height: 50px;
+        width: 100px;
+
+        span {
+          @include hidden;
+        }
+      }
+  
+      svg {
+        margin: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+  .carousel-dots {
+    float: right;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: -50%;
+    width: auto;
+    
+    a {
+      // layout
+      float: left;
+      display: inline-block;
+      height: 10px;
+      margin: 0 3px;
+      width: 10px;
+
+      // styling
+      @include transition(all 0.2s ease-in-out);
+      background-color: $carousel-dot-bg;
+      border-radius: 5px;
+
+      &.active {
+        background-color: $carousel-dot-active-bg;
+      }
+    }
+
+    li {
+      float: left;
+    }
+
+    li, ul {
+      // reset
+      @include reset-normalize;
+    }
+
+    ul {
+      display: inline-block;
+      margin: 0;
+      position: relative;
+      left: 50%;
+    }
+  }
+
+  #carousel-dots-container {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .carousel-image-container {
+    height: 100%;
+  }
+
+  .carousel-inner {
+    height: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  .carousel-item {
+    // layout
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    // styling
+    background-size: cover;
+
+    &.hidden {
+      display: none;
+    }
+
+
+    &.animating {
+      @include transition(left 0.6s cubic-bezier(0.86, 0, 0.07, 1));
+    }
+  }
+}

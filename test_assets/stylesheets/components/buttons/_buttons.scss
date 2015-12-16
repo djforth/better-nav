@@ -1,0 +1,96 @@
+.button {
+  // layout
+  display: inline-block !important;
+  font-family: "Garage Gothic", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+
+  // styling
+  @include transition(all 0.2s ease-in-out);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.button-news {
+  // layout
+  padding: 15px 20px;
+
+  // styling
+  background-color: $button-secondary-bg;
+
+  &:hover {
+    background-color: $button-secondary-bg-hover;
+
+    .icon {
+      @include sprite($arrow-news-hover);
+    }
+  }
+
+  .icon {
+    @include sprite($arrow-news);
+  }
+}
+
+.button-pagination {
+  // layout
+  padding: 10px 30px;
+
+  // styling
+  @include border-bottom-radius(5px);
+  @include linear-gradient(top, $button-pagination-bg-1, $button-pagination-bg-2);
+  color: $button-pagination-text;
+  font-size: 1.25em; /* 20px */
+
+
+  &:hover {
+    background-color: $button-pagination-bg-hover;
+    background-image: none;
+    color: $white;
+  }
+}
+
+.button-primary {
+  // layout
+  padding: 15px 30px;
+
+  // styling
+  background-color: $button-primary-bg;
+  border: 1px solid $button-primary-border;
+  color: $button-primary-text !important;
+
+  &:hover {
+    background-color: $button-primary-bg-hover;
+    box-shadow: 0 2px 5px 0 $button-primary-shadow;
+  }
+}
+
+.button-primary, .button-secondary {
+  font-size: 1.5em; /* 24px */
+}
+
+.button-secondary {
+  // layout
+  padding: 10px 20px;
+
+  // styling
+  background-color: $button-secondary-bg;
+  border: 1px solid $button-secondary-border;
+  color: $button-secondary-text !important;
+
+  &:hover {
+    background-color: $button-secondary-bg-hover;
+    color: $button-secondary-text-hover;
+  }
+}
+
+.button-tertiary {
+  // layout
+  padding: 15px 30px;
+
+  // styling
+  background-color: $button-tertiary-bg;
+  color: $button-tertiary-text;
+
+  &:hover {
+    background-color: $button-tertiary-bg-hover;
+  }
+}

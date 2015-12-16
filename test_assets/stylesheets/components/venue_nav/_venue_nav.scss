@@ -1,0 +1,47 @@
+.venue-nav-container {
+  @include linear-gradient(top, $venue-nav-container-bg-1, $venue-nav-container-bg-2);
+  box-shadow: 0 1px 5px 0 $venue-nav-container-shadow;
+
+  .list-holder {
+    // layout
+    height: 50px;
+
+    // styling
+    color: $venue-nav-text;
+
+    .date-nav-item {
+      font-size: 0.875em; /* 14px */
+
+      &.active {
+        &:after {
+          bottom: 0;
+          height: 3px;
+          width: 100%;
+        }
+
+        a {
+          &:after {
+            // layout
+            bottom: -13px;
+            z-index: 1;
+
+            // styling
+            @include sprite($arrow-green-up);
+          }
+        }
+      }
+
+      a {
+        margin: 20px 0;
+      }
+    }
+  }
+
+  .touch-nav {
+    height: 50px;
+
+    &:after {
+      display: none;
+    }
+  }
+}

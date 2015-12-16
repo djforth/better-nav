@@ -1,0 +1,94 @@
+section {
+  &.find-us {
+    .map-legend {
+      // styling
+      @include linear-gradient(45deg, $map-legend-bg-1, $map-legend-bg-2);
+      color: $map-legend-text;
+
+      a {
+        color: $map-legend-link;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      dd {
+        // reset
+        @include reset-normalize((
+          margin: 0 0 0 60px
+        )...);
+      }
+
+      dl {
+        // reset
+        @include reset-normalize((
+          margin: 0 0 20px,
+          vertical-align: top
+        )...);
+
+        // layout
+        display: inline-block;
+        text-align: left;
+
+        &:before {
+          content: "";
+          float: left;
+        }
+
+        &.address {
+          &:before {
+            @include sprite($legend-pin);
+          }
+        }
+
+        &.bike {
+          &:before {
+            @include sprite($legend-bike);
+          }
+        }
+
+        &.car {
+          &:before {
+            @include sprite($legend-car);
+          }
+        }
+
+        &.bus {
+          &:before {
+            @include sprite($legend-bus);
+          }
+        }
+
+        &.train {
+          &:before {
+            @include sprite($legend-train);
+          }
+        }
+      }
+
+      dt {
+        margin: 0 0 5px 60px;
+      }
+
+      .icon {
+        float: left;
+      }
+
+      header {
+        // layout
+        @include clearfix;
+  
+        // styling
+        border-bottom: 1px solid $map-legend-border;
+
+        dl {
+          // reset
+          @include reset-normalize((
+            margin: 10px 0
+          )...);
+        }
+      }
+    }
+  }
+}

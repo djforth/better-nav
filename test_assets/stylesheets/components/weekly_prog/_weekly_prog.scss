@@ -1,0 +1,356 @@
+.weekly-prog{
+
+  .no-sessions{
+    text-align: center;
+  }
+
+  .additional{
+    font-size: 1.231em; /* 16px */
+    padding:20px;
+    display:none;
+
+    &.active{
+      display: block;
+    }
+
+    ul.list-group{
+      @include reset-normalize();
+      @include clearfix();
+      display: block;
+      margin-bottom:20px;
+
+      li{
+        @include reset-normalize();
+        margin-right:20px;
+      }
+    }
+
+    .description{
+      @include clearfix();
+      display: block;
+    }
+  }
+
+  .pagination{
+    padding:0 30px 20px;
+    text-align: center;
+    // border:1px solid red;
+    &.hide{
+      @include hidden();
+    }
+  }
+
+  .afternoon{
+    .pill.pill-secondary{
+      background-color: $weely-prog-pill-arvo;
+    }
+  }
+
+  .evening{
+    .pill.pill-secondary{
+      background-color: $weely-prog-pill-evening;
+    }
+
+  }
+
+  .old-session{
+    background-color: $weely-prog-old-session;
+  }
+
+  .now{
+    background-color: $weely-prog-now-session;
+  }
+
+
+  .date-nav {
+    // normalize resets
+    @include reset-normalize;
+    @include clearfix;
+    position: relative;
+
+    //Layout
+    width:100%;
+    height:70px;
+
+    &:after{
+      //Layout
+      content: "";
+      position: absolute;
+      width:100%;
+      height: 1px;
+      bottom:20px;
+      left:0;
+      right:0;
+
+      //Styling
+      background-color: $weekly-prog-nav-border;
+    }
+    // //Styling
+    // border-bottom: 1px solid $weekly-prog-nav-border;
+
+    .date-list{
+      @include reset-normalize;
+      height:auto;
+      // overflow: hidden;
+      position: absolute;
+      left:0;
+      height:50px;
+      transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    }
+
+
+
+    .list-holder{
+      width: calc(100% - 250px);
+      overflow: hidden;
+      float: left;
+      position: relative;
+      height:70px;
+
+
+    }
+    // Date Nav start
+    .today-nav{
+      float:left;
+      a{
+        color: $weekly-prog-nav-today;
+        border-right:1px solid $weekly-prog-nav-border;
+      }
+    }
+
+    .nav-mover{
+      // normalize resets
+      @include reset-normalize;
+
+      // layout
+      float: left;
+      position: relative;
+      margin:15px;
+      width:10px;
+      height:20px;
+
+      // styling
+      font-size: 1.25em; /* 20px */
+      font-weight: 300;
+      line-height: 1em;
+      background-size: contain;
+
+      &:after{
+        content:"";
+        position: absolute;
+
+        top:0;
+        // left:0;
+        // right:0;
+        width:1px;
+        height:20px;
+
+        background-color:$weekly-prog-nav-border;
+     }
+
+      &.move-left{
+        background:url("data:image/svg+xml;utf8,<svg id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"157.3 491.7 21.7 39\"><style>.st0{fill: #cfcfcf}</style><path class=\"st0\" d=\"M177 530.7l-19.6-19.5 2.1-2.1 19.6 19.5-2.1 2.1z\"/><path class=\"st0\" d=\"M179 493.8l-19.5 19.6-2.1-2.1 19.5-19.6 2.1 2.1z\"/></svg>") center center no-repeat;
+         // border-right:1px solid $weekly-prog-nav-border;
+         &:after{
+            right:-20px;
+         }
+
+      }
+
+       &.move-right{
+         float:right;
+         background:url("data:image/svg+xml;utf8,<svg id='Layer_1' xmlns='http://www.w3.org/2000/svg' viewBox='157.4 491.6 21.7 39.2'><style>.st0{fill:#cfcfcf}</style><path class='st0' d='M159.5 491.6l19.6 19.6-2.1 2.1-19.6-19.6 2.1-2.1z'/><path class='st0' d='M157.4 528.6L177 509l2.1 2.1-19.6 19.6-2.1-2.1z'/></svg>") center center no-repeat;
+
+         &:after{
+            left:-20px;
+         }
+
+      }
+    }
+
+
+
+    .date-nav-item-link  {
+      // layout
+      display: block;
+      padding: 0 20px;
+      margin:15px 0;
+      position: relative;
+
+      // styling
+      // border-bottom: 1px solid $weekly-prog-nav-border;
+      color: $weekly-prog-nav-text;
+      text-decoration: none;
+      text-transform: uppercase;
+
+
+    }
+
+    .date-nav-item {
+      // normalize resets
+      @include reset-normalize;
+
+      // layout
+      float: left;
+      position: relative;
+      height:50px;
+
+      // styling
+      font-size: 1.25em; /* 20px */
+      font-weight: 300;
+      line-height: 1em;
+
+
+      &.active {
+        // position: relative;
+        &:after {
+            // layout
+          content: "";
+          width: 95%;
+          height: 2px;
+          display: inline-block;
+          position: absolute;
+          bottom:-0.5px;
+          left:0;
+          right:0;
+          background-color: $weekly-prog-nav-border-active;
+
+        }
+
+
+        a{
+          color: $weekly-prog-nav-text-active;
+          // font-weight: 400;
+
+
+          &:after {
+            // layout
+            content: "";
+            display: inline-block;
+            margin: auto;
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: -19.5px;
+
+            // styling
+            @include sprite($arrow-green-down);
+          }
+        }
+
+      }
+
+    }
+
+    .loading-session{
+      color:$silver !important;
+    }
+
+    .loading{
+      // border:1px solid red;
+      position: absolute;
+      left:0;
+      top:0;
+      z-index:100;
+      width:100%;
+      height:50px;
+
+      background:$silver-t-05 url("data:image/svg+xml;utf8,<svg width='38' height='38' viewBox='0 0 38 38' xmlns='http://www.w3.org/2000/svg' stroke='#fff'><g transform='translate(1 1)' stroke-width='2' fill='none' fill-rule='evenodd'><circle stroke-opacity='.5' cx='18' cy='18' r='18'/><path d='M36 18c0-9.94-8.06-18-18-18'><animateTransform attributeName='transform' type='rotate' from='0 18 18' to='360 18 18' dur='1s' repeatCount='indefinite'/></path></g></svg>") center center no-repeat;
+
+      // background-size: contain;
+    }
+  }
+
+  // Date Nav Finish
+
+  // Calendar-bar
+  .calendar-bar{
+
+    //Style
+    background: $calendar-bar-bg;
+    border-top:2px solid $calendar-bar-border;
+  }
+
+  .print-prog{
+    //Layout
+    display: inline-block;
+    position: relative;
+    float:right;
+
+    border-left:1px solid $calendar-print-border;
+
+    .print-prog-icon{
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin: 8px 10px;
+      //Style
+      background:transparent url("data:image/svg+xml;utf8,<svg id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 42 44\"><style>.st0{fill:none;stroke:#585858;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}</style><g id=\"icons\"><path class=\"st0\" d=\"M9 1h24v8H9V1zm0 32H1V9h40v24h-8\"/><path class=\"st0\" d=\"M9 27h24v16H9V27zm-4 0h32M13 37h16m-16-4h16\"/><circle class=\"st0\" cx=\"33.8\" cy=\"19\" r=\"2\"/></g></svg>") center center no-repeat;
+        background-size: contain;
+    }
+
+
+    // &:before{
+    //   content: "";
+    //   position: absolute;
+    //   left:0;
+    //   top:0;
+    //   width:2px;
+    //   height:100%;
+    //   background:grey;
+    // }
+  }
+
+  .calendar-btn{
+    position: relative;
+    float:left;
+    button{
+      //Layout
+      padding: 5px 10px;
+
+      //Style
+      background-color: $calendar-btn-bg;
+      color:$calendar-btn-text;
+      border: none;
+      border-bottom: 1px solid $calendar-bar-bg;
+
+      &:focus{
+        outline: none;
+      }
+    }
+
+    .month-str{
+      line-height: 1.5em;
+      display: inline-block;
+      float: right;
+      margin: 5px;
+    }
+
+    .calendar-holder{
+      position: absolute;
+      top:100%;
+      left:0;
+      z-index:1000;
+    }
+
+
+    .calendar-icon{
+      //layout
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin:5px;
+
+      //Style
+      background:$calendar-btn-bg url("data:image/svg+xml;utf8,<svg id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 42.8 44\"><style>.st0{fill:none;stroke:#FFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}.st1{fill:#FFF}</style><path class=\"st0\" d=\"M1 15h40\"/><path class=\"st1\" d=\"M11 34h3v-8.6c0-.3.5-.7.5-1.1l-1.9 1.8-.2.2h-.2c-.1 0-.2 0-.3-.1s-.2-.1-.2-.2l-.8-1.2 4.5-3.9H17v13h2v2h-8V34zm17.9-13c.7 0 1.3.1 1.9.3.6.2 1 .5 1.5.9.4.4.7.8.9 1.3s.3 1.1.3 1.7c0 .5-.1 1-.2 1.5-.2.5-.4.9-.6 1.3l-.9 1.2c-.4.4-.7.8-1.1 1.2l-3.3 3.4c.3-.1.6 0 1 0 .3-.1.6.1.9.1h3.8c.3 0 .1-.1.3 0 .2.2-.2.2-.2.4V36H23v-.9c0-.2.4-.3.4-.5.1-.2.3-.4.5-.5l4.6-4.5c.4-.4.8-.7 1-1.1.3-.3.6-.7.8-1 .2-.3.4-.7.5-1 .1-.4.2-.7.2-1.1s0-.7-.2-.9c-.1-.3-.2-.5-.4-.7-.2-.2-.4-.3-.7-.4-.3-.1-.6-.1-.9-.1-.6 0-1.1.2-1.5.5s-.7.7-.8 1.2c-.1.3-.2.4-.3.6-.1.1-.3.2-.6.2h-.3l-1.3-.2c.1-.7.3-1.3.6-1.9.3-.5.7-1 1.1-1.3.4-.4.9-.6 1.5-.8.5-.5 1.1-.6 1.7-.6z\"/><path class=\"st0\" d=\"M36 5h6v38H1V5h6m7 0h16\"/><path class=\"st0\" d=\"M8 1h6v8H8V1zm22 0h6v8h-6V1z\"/></svg>") center center no-repeat;
+      background-size: contain;
+
+
+    }
+  }
+
+  // Calendar-bar finish
+}
+

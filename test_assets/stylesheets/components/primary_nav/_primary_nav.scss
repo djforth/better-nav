@@ -1,0 +1,59 @@
+
+
+.nav-list{
+  // reset
+  @include reset-normalize;
+
+  // layout
+  @include clearfix;
+}
+
+.primary-nav-list {
+
+  a {
+    // layout
+    display: block;
+    padding: 15px;
+
+    // styling
+    @include transition(all 0.2s ease-in-out);
+    color: $primary-nav-text;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 300;
+
+
+  }
+
+  li {
+    // layout
+    float: left;
+
+    // styling
+    font-size: 1em; /* 16px */
+
+    &.active{
+      a {
+        background-color: $primary-nav-bg-hover;
+        color: $primary-nav-text-hover;
+      }
+    }
+  }
+
+  li, ul {
+    // reset
+    @include reset-normalize;
+  }
+
+  .dropdown-parent {
+    &:hover {
+      background-color: $primary-nav-dropdown-bg;
+    }
+  }
+}
+
+.primary-nav-header, #primary-nav-toggle {
+  span {
+    @include hidden;
+  }
+}

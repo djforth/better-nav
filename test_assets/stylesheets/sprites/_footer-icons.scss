@@ -1,0 +1,115 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$big-society-name: 'big-society';
+$big-society-x: 0px;
+$big-society-y: 52px;
+$big-society-offset-x: 0px;
+$big-society-offset-y: -52px;
+$big-society-width: 116px;
+$big-society-height: 32px;
+$big-society-total-width: 116px;
+$big-society-total-height: 84px;
+$big-society-image: 'sprites/footer-icons.png';
+$big-society: (0px, 52px, 0px, -52px, 116px, 32px, 116px, 84px, 'sprites/footer-icons.png', 'big-society', );
+$social-enterprise-name: 'social-enterprise';
+$social-enterprise-x: 0px;
+$social-enterprise-y: 0px;
+$social-enterprise-offset-x: 0px;
+$social-enterprise-offset-y: 0px;
+$social-enterprise-width: 116px;
+$social-enterprise-height: 52px;
+$social-enterprise-total-width: 116px;
+$social-enterprise-total-height: 84px;
+$social-enterprise-image: 'sprites/footer-icons.png';
+$social-enterprise: (0px, 0px, 0px, 0px, 116px, 52px, 116px, 84px, 'sprites/footer-icons.png', 'social-enterprise', );
+$spritesheet-width: 116px;
+$spritesheet-height: 84px;
+$spritesheet-image: 'sprites/footer-icons.png';
+$spritesheet-sprites: ($big-society, $social-enterprise, );
+$spritesheet: (116px, 84px, 'sprites/footer-icons.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-big-society {
+  background-image: image-url('sprites/footer-icons.png');
+  background-position: 0px -52px;
+  width: 116px;
+  height: 32px;
+}
+.icon-social-enterprise {
+  background-image: image-url('sprites/footer-icons.png');
+  background-position: 0px 0px;
+  width: 116px;
+  height: 52px;
+}

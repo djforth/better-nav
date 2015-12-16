@@ -1,0 +1,268 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$balloon-name: 'balloon';
+$balloon-x: 252px;
+$balloon-y: 61px;
+$balloon-offset-x: -252px;
+$balloon-offset-y: -61px;
+$balloon-width: 42px;
+$balloon-height: 68px;
+$balloon-total-width: 301px;
+$balloon-total-height: 227px;
+$balloon-image: 'sprites/facility-icons.png';
+$balloon: (252px, 61px, -252px, -61px, 42px, 68px, 301px, 227px, 'sprites/facility-icons.png', 'balloon', );
+$book-name: 'book';
+$book-x: 60px;
+$book-y: 114px;
+$book-offset-x: -60px;
+$book-offset-y: -114px;
+$book-width: 74px;
+$book-height: 50px;
+$book-total-width: 301px;
+$book-total-height: 227px;
+$book-image: 'sprites/facility-icons.png';
+$book: (60px, 114px, -60px, -114px, 74px, 50px, 301px, 227px, 'sprites/facility-icons.png', 'book', );
+$coffee-name: 'coffee';
+$coffee-x: 0px;
+$coffee-y: 114px;
+$coffee-offset-x: 0px;
+$coffee-offset-y: -114px;
+$coffee-width: 60px;
+$coffee-height: 62px;
+$coffee-total-width: 301px;
+$coffee-total-height: 227px;
+$coffee-image: 'sprites/facility-icons.png';
+$coffee: (0px, 114px, 0px, -114px, 60px, 62px, 301px, 227px, 'sprites/facility-icons.png', 'coffee', );
+$dumbbells-name: 'dumbbells';
+$dumbbells-x: 0px;
+$dumbbells-y: 65px;
+$dumbbells-offset-x: 0px;
+$dumbbells-offset-y: -65px;
+$dumbbells-width: 83px;
+$dumbbells-height: 49px;
+$dumbbells-total-width: 301px;
+$dumbbells-total-height: 227px;
+$dumbbells-image: 'sprites/facility-icons.png';
+$dumbbells: (0px, 65px, 0px, -65px, 83px, 49px, 301px, 227px, 'sprites/facility-icons.png', 'dumbbells', );
+$heart-name: 'heart';
+$heart-x: 0px;
+$heart-y: 176px;
+$heart-offset-x: 0px;
+$heart-offset-y: -176px;
+$heart-width: 67px;
+$heart-height: 51px;
+$heart-total-width: 301px;
+$heart-total-height: 227px;
+$heart-image: 'sprites/facility-icons.png';
+$heart: (0px, 176px, 0px, -176px, 67px, 51px, 301px, 227px, 'sprites/facility-icons.png', 'heart', );
+$masks-name: 'masks';
+$masks-x: 192px;
+$masks-y: 60px;
+$masks-offset-x: -192px;
+$masks-offset-y: -60px;
+$masks-width: 56px;
+$masks-height: 62px;
+$masks-total-width: 301px;
+$masks-total-height: 227px;
+$masks-image: 'sprites/facility-icons.png';
+$masks: (192px, 60px, -192px, -60px, 56px, 62px, 301px, 227px, 'sprites/facility-icons.png', 'masks', );
+$pool-ladder-name: 'pool-ladder';
+$pool-ladder-x: 65px;
+$pool-ladder-y: 0px;
+$pool-ladder-offset-x: -65px;
+$pool-ladder-offset-y: 0px;
+$pool-ladder-width: 69px;
+$pool-ladder-height: 60px;
+$pool-ladder-total-width: 301px;
+$pool-ladder-total-height: 227px;
+$pool-ladder-image: 'sprites/facility-icons.png';
+$pool-ladder: (65px, 0px, -65px, 0px, 69px, 60px, 301px, 227px, 'sprites/facility-icons.png', 'pool-ladder', );
+$present-name: 'present';
+$present-x: 252px;
+$present-y: 0px;
+$present-offset-x: -252px;
+$present-offset-y: 0px;
+$present-width: 49px;
+$present-height: 61px;
+$present-total-width: 301px;
+$present-total-height: 227px;
+$present-image: 'sprites/facility-icons.png';
+$present: (252px, 0px, -252px, 0px, 49px, 61px, 301px, 227px, 'sprites/facility-icons.png', 'present', );
+$racquet-name: 'racquet';
+$racquet-x: 0px;
+$racquet-y: 0px;
+$racquet-offset-x: 0px;
+$racquet-offset-y: 0px;
+$racquet-width: 65px;
+$racquet-height: 65px;
+$racquet-total-width: 301px;
+$racquet-total-height: 227px;
+$racquet-image: 'sprites/facility-icons.png';
+$racquet: (0px, 0px, 0px, 0px, 65px, 65px, 301px, 227px, 'sprites/facility-icons.png', 'racquet', );
+$shuttlecock-name: 'shuttlecock';
+$shuttlecock-x: 134px;
+$shuttlecock-y: 0px;
+$shuttlecock-offset-x: -134px;
+$shuttlecock-offset-y: 0px;
+$shuttlecock-width: 58px;
+$shuttlecock-height: 65px;
+$shuttlecock-total-width: 301px;
+$shuttlecock-total-height: 227px;
+$shuttlecock-image: 'sprites/facility-icons.png';
+$shuttlecock: (134px, 0px, -134px, 0px, 58px, 65px, 301px, 227px, 'sprites/facility-icons.png', 'shuttlecock', );
+$tennis-ball-name: 'tennis-ball';
+$tennis-ball-x: 192px;
+$tennis-ball-y: 0px;
+$tennis-ball-offset-x: -192px;
+$tennis-ball-offset-y: 0px;
+$tennis-ball-width: 60px;
+$tennis-ball-height: 60px;
+$tennis-ball-total-width: 301px;
+$tennis-ball-total-height: 227px;
+$tennis-ball-image: 'sprites/facility-icons.png';
+$tennis-ball: (192px, 0px, -192px, 0px, 60px, 60px, 301px, 227px, 'sprites/facility-icons.png', 'tennis-ball', );
+$spritesheet-width: 301px;
+$spritesheet-height: 227px;
+$spritesheet-image: 'sprites/facility-icons.png';
+$spritesheet-sprites: ($balloon, $book, $coffee, $dumbbells, $heart, $masks, $pool-ladder, $present, $racquet, $shuttlecock, $tennis-ball, );
+$spritesheet: (301px, 227px, 'sprites/facility-icons.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-balloon {
+  background-image: image-url('sprites/facility-icons.png');
+  background-position: -252px -61px;
+  width: 42px;
+  height: 68px;
+}
+.icon-book {
+  background-image: image-url('sprites/facility-icons.png');
+  background-position: -60px -114px;
+  width: 74px;
+  height: 50px;
+}
+.icon-coffee {
+  background-image: image-url('sprites/facility-icons.png');
+  background-position: 0px -114px;
+  width: 60px;
+  height: 62px;
+}
+.icon-dumbbells {
+  background-image: image-url('sprites/facility-icons.png');
+  background-position: 0px -65px;
+  width: 83px;
+  height: 49px;
+}
+.icon-heart {
+  background-image: image-url('sprites/facility-icons.png');
+  background-position: 0px -176px;
+  width: 67px;
+  height: 51px;
+}
+.icon-masks {
+  background-image: image-url('sprites/facility-icons.png');
+  background-position: -192px -60px;
+  width: 56px;
+  height: 62px;
+}
+.icon-pool-ladder {
+  background-image: image-url('sprites/facility-icons.png');
+  background-position: -65px 0px;
+  width: 69px;
+  height: 60px;
+}
+.icon-present {
+  background-image: image-url('sprites/facility-icons.png');
+  background-position: -252px 0px;
+  width: 49px;
+  height: 61px;
+}
+.icon-racquet {
+  background-image: image-url('sprites/facility-icons.png');
+  background-position: 0px 0px;
+  width: 65px;
+  height: 65px;
+}
+.icon-shuttlecock {
+  background-image: image-url('sprites/facility-icons.png');
+  background-position: -134px 0px;
+  width: 58px;
+  height: 65px;
+}
+.icon-tennis-ball {
+  background-image: image-url('sprites/facility-icons.png');
+  background-position: -192px 0px;
+  width: 60px;
+  height: 60px;
+}

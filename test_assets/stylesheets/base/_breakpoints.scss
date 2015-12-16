@@ -1,0 +1,24 @@
+$mobile-breakpoint: max-width 767px;
+$mobile-width: 767px;
+$mobile-and-tablet-breakpoint: max-width 991px;
+$tablet-breakpoint: 768px 991px;
+$tablet-width: 991px;
+$tablet-and-desktop-breakpoint: min-width 768px;
+$desktop-breakpoint: 992px;
+$desktop-width: 1200px;
+
+.wrap {
+  padding: 0 10px;
+  
+  @include breakpoint($mobile-breakpoint) {
+    @include container($mobile-width);
+  }
+
+  @include breakpoint($tablet-breakpoint) {
+    @include container($tablet-width);
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    @include container($desktop-width);
+  }
+}

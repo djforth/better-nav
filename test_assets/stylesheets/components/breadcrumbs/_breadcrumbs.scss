@@ -1,0 +1,38 @@
+.breadcrumbs {
+  // layout
+  padding: 20px;
+
+  // styling
+  border-bottom: 1px solid $breadcrumbs-border;
+  font-size: 0.813em; /* 13px */
+
+  a {
+    color: $breadcrumbs-link-text;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .current {
+    color: $breadcrumbs-current-text;
+  }
+
+  .icon {
+    display: inline-block;
+  }
+
+  .pretext {
+    // layout
+    margin-right: 5px;
+
+    // styling
+    color: $breadcrumbs-pretext-text;
+    font-weight: 700;
+  }
+
+  .separator {
+    margin: 0 10px;
+  }
+}

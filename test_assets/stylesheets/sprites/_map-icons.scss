@@ -1,0 +1,200 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$legend-bike-name: 'legend-bike';
+$legend-bike-x: 41px;
+$legend-bike-y: 0px;
+$legend-bike-offset-x: -41px;
+$legend-bike-offset-y: 0px;
+$legend-bike-width: 48px;
+$legend-bike-height: 31px;
+$legend-bike-total-width: 123px;
+$legend-bike-total-height: 105px;
+$legend-bike-image: 'sprites/map-icons.png';
+$legend-bike: (41px, 0px, -41px, 0px, 48px, 31px, 123px, 105px, 'sprites/map-icons.png', 'legend-bike', );
+$legend-bus-name: 'legend-bus';
+$legend-bus-x: 30px;
+$legend-bus-y: 62px;
+$legend-bus-offset-x: -30px;
+$legend-bus-offset-y: -62px;
+$legend-bus-width: 30px;
+$legend-bus-height: 39px;
+$legend-bus-total-width: 123px;
+$legend-bus-total-height: 105px;
+$legend-bus-image: 'sprites/map-icons.png';
+$legend-bus: (30px, 62px, -30px, -62px, 30px, 39px, 123px, 105px, 'sprites/map-icons.png', 'legend-bus', );
+$legend-car-name: 'legend-car';
+$legend-car-x: 41px;
+$legend-car-y: 31px;
+$legend-car-offset-x: -41px;
+$legend-car-offset-y: -31px;
+$legend-car-width: 37px;
+$legend-car-height: 31px;
+$legend-car-total-width: 123px;
+$legend-car-total-height: 105px;
+$legend-car-image: 'sprites/map-icons.png';
+$legend-car: (41px, 31px, -41px, -31px, 37px, 31px, 123px, 105px, 'sprites/map-icons.png', 'legend-car', );
+$legend-pin-name: 'legend-pin';
+$legend-pin-x: 89px;
+$legend-pin-y: 0px;
+$legend-pin-offset-x: -89px;
+$legend-pin-offset-y: 0px;
+$legend-pin-width: 34px;
+$legend-pin-height: 42px;
+$legend-pin-total-width: 123px;
+$legend-pin-total-height: 105px;
+$legend-pin-image: 'sprites/map-icons.png';
+$legend-pin: (89px, 0px, -89px, 0px, 34px, 42px, 123px, 105px, 'sprites/map-icons.png', 'legend-pin', );
+$legend-train-name: 'legend-train';
+$legend-train-x: 0px;
+$legend-train-y: 62px;
+$legend-train-offset-x: 0px;
+$legend-train-offset-y: -62px;
+$legend-train-width: 30px;
+$legend-train-height: 43px;
+$legend-train-total-width: 123px;
+$legend-train-total-height: 105px;
+$legend-train-image: 'sprites/map-icons.png';
+$legend-train: (0px, 62px, 0px, -62px, 30px, 43px, 123px, 105px, 'sprites/map-icons.png', 'legend-train', );
+$pin-primary-name: 'pin-primary';
+$pin-primary-x: 0px;
+$pin-primary-y: 0px;
+$pin-primary-offset-x: 0px;
+$pin-primary-offset-y: 0px;
+$pin-primary-width: 41px;
+$pin-primary-height: 62px;
+$pin-primary-total-width: 123px;
+$pin-primary-total-height: 105px;
+$pin-primary-image: 'sprites/map-icons.png';
+$pin-primary: (0px, 0px, 0px, 0px, 41px, 62px, 123px, 105px, 'sprites/map-icons.png', 'pin-primary', );
+$pin-secondary-name: 'pin-secondary';
+$pin-secondary-x: 60px;
+$pin-secondary-y: 62px;
+$pin-secondary-offset-x: -60px;
+$pin-secondary-offset-y: -62px;
+$pin-secondary-width: 24px;
+$pin-secondary-height: 37px;
+$pin-secondary-total-width: 123px;
+$pin-secondary-total-height: 105px;
+$pin-secondary-image: 'sprites/map-icons.png';
+$pin-secondary: (60px, 62px, -60px, -62px, 24px, 37px, 123px, 105px, 'sprites/map-icons.png', 'pin-secondary', );
+$spritesheet-width: 123px;
+$spritesheet-height: 105px;
+$spritesheet-image: 'sprites/map-icons.png';
+$spritesheet-sprites: ($legend-bike, $legend-bus, $legend-car, $legend-pin, $legend-train, $pin-primary, $pin-secondary, );
+$spritesheet: (123px, 105px, 'sprites/map-icons.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-legend-bike {
+  background-image: image-url('sprites/map-icons.png');
+  background-position: -41px 0px;
+  width: 48px;
+  height: 31px;
+}
+.icon-legend-bus {
+  background-image: image-url('sprites/map-icons.png');
+  background-position: -30px -62px;
+  width: 30px;
+  height: 39px;
+}
+.icon-legend-car {
+  background-image: image-url('sprites/map-icons.png');
+  background-position: -41px -31px;
+  width: 37px;
+  height: 31px;
+}
+.icon-legend-pin {
+  background-image: image-url('sprites/map-icons.png');
+  background-position: -89px 0px;
+  width: 34px;
+  height: 42px;
+}
+.icon-legend-train {
+  background-image: image-url('sprites/map-icons.png');
+  background-position: 0px -62px;
+  width: 30px;
+  height: 43px;
+}
+.icon-pin-primary {
+  background-image: image-url('sprites/map-icons.png');
+  background-position: 0px 0px;
+  width: 41px;
+  height: 62px;
+}
+.icon-pin-secondary {
+  background-image: image-url('sprites/map-icons.png');
+  background-position: -60px -62px;
+  width: 24px;
+  height: 37px;
+}

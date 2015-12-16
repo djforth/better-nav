@@ -1,0 +1,61 @@
+@include breakpoint($mobile-breakpoint) {
+  section {
+    &.find-us {
+      @include span(4 of 4 last);
+
+      .map-legend {
+        dl {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint($tablet-breakpoint) {
+  section {
+    &.find-us {
+      @include span(10 of 10 last);
+
+      .map-legend {
+        dl {
+          width: calc(33.333333333333% - 20px);
+
+          &:nth-child(3n+1) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint($tablet-and-desktop-breakpoint) {
+  section {
+    &.find-us {
+      .map-legend {
+        dl {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint($desktop-breakpoint) {
+  section {
+    &.find-us {
+      @include span(12 of 12 last);
+
+      .map-legend {
+        dl {
+          width: calc(20% - 20px);
+
+          &:nth-child(5n+1) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

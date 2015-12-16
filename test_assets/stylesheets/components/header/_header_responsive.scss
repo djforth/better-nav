@@ -1,0 +1,49 @@
+@include breakpoint($mobile-breakpoint) {
+  header {
+    &.main {
+      .logo {
+        width: 30%;
+      }
+    }
+  }
+}
+
+@include breakpoint($mobile-and-tablet-breakpoint) {
+  body {
+    &.nav-open {
+      header {
+        &.main {
+          background-color: $header-bg-nav-open;
+        }
+      }
+    }
+  }
+
+  header {
+    &.main {
+      @include transition(background-color 0.2s ease-in-out);
+    }
+  }
+}
+
+@include breakpoint($tablet-breakpoint) {
+  header {
+    &.main {
+      .logo {
+        width: 20%;
+      }
+    }
+  }
+}
+
+@include breakpoint($desktop-breakpoint) {
+  header {
+    &.main {
+      position: relative;
+
+      .logo {
+        width: 10%;
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+footer {
+  &.main {
+    @include breakpoint($mobile-breakpoint) {
+      section {
+        &.footer-about, &.footer-information, &.footer-location, &.footer-offer {
+          margin-bottom: 20px;
+
+          h1 {
+            // layout
+            @include bleed-x(10px);
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            // styling
+            background-color: $footer-heading-bg;
+            border-bottom: 1px solid $footer-border-3;
+          }
+        }
+      }
+
+      .footer-footer {
+        background-color: $footer-footer-bg-2;
+      }
+    }
+
+    @include breakpoint($tablet-breakpoint) {
+      
+    }
+
+    @include breakpoint($tablet-and-desktop-breakpoint) {
+      section {
+        &:before {
+          // layout
+          content: "";
+          display: block;
+          height: 1px;
+          margin-bottom: 15px;
+          width: 30px;
+
+          // styling
+          background-color: $footer-border-3;
+        }
+      }
+
+      .footer-footer {
+        background-color: $footer-footer-bg-1;
+      }
+    }
+
+    @include breakpoint($desktop-breakpoint) {
+      @include span(12 of 12 last);
+
+      .column-one {
+        // layout
+        @include span(10 of 12);
+        box-sizing: border-box;
+        padding-right: 1.69492%;
+
+        // styling
+        border-right: 1px solid $footer-border-2;
+
+        section {
+          @include span(2 of 10);
+
+          &.sign-up {
+            @include span(6 of 10);
+          }
+        }
+      }
+
+      .column-two {
+        @include span(2 of 12 last);
+      }
+    }
+  }
+}

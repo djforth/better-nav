@@ -1,0 +1,12 @@
+section {
+  &.find-a-centre {
+    border: 10px solid $section-border;
+    
+    h1 {
+      // reset
+      @include reset-normalize((
+        margin: 0 0 10px
+      )...);
+    }
+  }
+}

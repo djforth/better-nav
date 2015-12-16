@@ -1,0 +1,25 @@
+.collapsible-content-body {
+  display: none;
+  
+  &.open {
+    display: block;
+  }
+}
+
+.collapsible-content-item {
+  margin-bottom: 20px;
+
+  &.last {
+    margin-bottom: 0;
+  }
+}
+
+.collapsible-content-toggle {
+  // layout
+  padding: 0;
+
+  // styling
+  background-color: transparent;
+  border: 0 none;
+  outline: 0;
+}

@@ -1,0 +1,297 @@
+// Please keep this up-to-date with colours.scss as follows:
+
+// All project colours sourced from colours.scss to be placed underneath /* ---------- Project colours ---------- */ Colour variables only please
+
+// All Ireland-specific colours to be placed underneath /* ---------- Ireland colours ---------- */
+
+// Then assign the colour variables to their new variables at the bottom of this file
+
+/* ---------- Project colours ---------- */
+// Blues
+$havelock-blue: #41a1db;
+$lochmara: #008bd0;
+
+// Greens
+$apple: #55a440;
+$apple-t-043: rgba(85, 164, 44, 0.43);
+$celery: #9dcd53;
+$celery-2: #a6d263;
+$conifer: #98cf50;
+$fern: #65ad52;
+$mantis: #79b84f;
+$mantis-2: #86bf60;
+$snow-drift: #f0f4ef;
+$sprout: #b7d9ad;
+
+// Greys
+$alabaster: #f8f8f8;
+$alto: #dbdbdb;
+$alto-2: #cfcfcf;
+$alto-3: #dedede;
+$alto-4: #d7d7d7;
+$black-t-003: rgba(0, 0, 0, 0.03);
+$black-t-01: rgba(0, 0, 0, 0.1);
+$black-t-015: rgba(0, 0, 0, 0.15);
+$black-t-022: rgba(0, 0, 0, 0.22);
+$black-t-024: rgba(0, 0, 0, 0.24);
+$black-t-034: rgba(0, 0, 0, 0.34);
+$boulder: #797878;
+$boulder-2: #7c7c7c;
+$cod-grey: #141414;
+$dove-grey: #707070;
+$emperor: #505050;
+$gallery: #f0f0f0;
+$gallery-2: #efefef;
+$gallery-3: #ededed;
+$mercury: #e7e7e7;
+$mischka-t-06: rgba(233, 231, 234, 0.6);
+$mine-shaft: #2e2e2e;
+$mine-shaft-2: #383838;
+$nobel: #b6b6b6;
+$pale-slate: #b8b7b8;
+$scorpion: #585858;
+$scorpion-t-02: rgba(88, 88, 88, 0.2);
+$scorpion-t-03: rgba(88, 88, 88, 0.3);
+$scorpion-t-04: rgba(88, 88, 88, 0.4);
+$silver: #c7c7c7;
+$silver-2: #b9b9b9;
+$silver-t-05: rgba(204, 204, 204, 0.5);
+$tundora: #4a4a4a;
+$wild-sand: #f6f6f6;
+
+// Other
+$christine: #f45b0b;
+$thunderbird: #cc1517;
+$trinidad: #e14e00;
+$white: #fff;
+/* ---------- End Project colours ---------- */
+
+/* ---------- Ireland colours ---------- */
+$athens-grey: #eff2f4;
+$azure-radiance: #14b1ff;
+$lochmara-t-043: rgba(0, 139, 208, 0.43);
+$dodger-blue: #04acff;
+$dodger-blue-2: #0fafff;
+
+/* ---------- End Ireland colours ---------- */
+
+/* ---------- Global ---------- */
+$body-link: $trinidad !default;
+$primary-body-text: $scorpion !default;
+$primary-heading-text: $lochmara !default;
+$primary-heading-text-alt: $azure-radiance !default;
+$secondary-heading-text: $scorpion !default;
+$tertiary-body-text: $white !default;
+$tertiary-heading-text: $white !default;
+
+// Forms
+$form-error-border: $thunderbird !default;
+$form-input-border: $alto-4 !default;
+$form-input-text: $pale-slate !default;
+$form-input-text-focus: $scorpion !default;
+$form-select-bg: $white !default;
+$form-select-border: $alto-4 !default;
+$label: $tundora !default;
+/* ---------- End Global ---------- */
+
+/* ---------- Components ---------- */
+// Breadcrumbs
+$breadcrumbs-border: $silver-2 !default;
+$breadcrumbs-current-text: $lochmara !default;
+$breadcrumbs-link-text: $boulder-2 !default;
+$breadcrumbs-pretext-text: $mine-shaft-2 !default;
+
+// Buttons
+$button-pagination-bg-1: $alto !default;
+$button-pagination-bg-2: $gallery-2 !default;
+$button-pagination-bg-hover: $christine !default;
+$button-pagination-text: $scorpion !default;
+$button-pagination-text-hover: $white !default;
+$button-primary-bg: $trinidad !default;
+$button-primary-bg-hover: $christine !default;
+$button-primary-border: $trinidad !default;
+$button-primary-shadow: $black-t-034 !default;
+$button-primary-text: $white !default;
+$button-secondary-bg: $white !default;
+$button-secondary-bg-hover: $christine !default;
+$button-secondary-border: $trinidad !default;
+$button-secondary-text: $trinidad !default;
+$button-secondary-text-hover: $white !default;
+$button-tertiary-bg: $alto !default;
+$button-tertiary-bg-hover: darken($alto, 10%) !default;
+$button-tertiary-text: $scorpion !default;
+
+// Carousel
+$carousel-arrow-bg: $white !default;
+$carousel-dot-active-bg: $scorpion !default;
+$carousel-dot-bg: $dodger-blue !default;
+
+// Fake table
+$row-even: $gallery !default;
+$table-em: $lochmara !default;
+$thead-text: $scorpion !default;
+$tr-border: $alto-2 !default;
+
+// Find us
+$map-legend-bg-1: $lochmara !default;
+$map-legend-bg-2: $dodger-blue !default;
+$map-legend-border: $lochmara !default;
+$map-legend-link: $white !default;
+$map-legend-text: $white !default;
+
+// Footer
+$footer-bg: $alto-3 !default;
+$footer-border: $scorpion !default;
+$footer-border-2: $alto-2 !default;
+$footer-border-3: $nobel !default;
+$footer-footer-bg-1: $white !default;
+$footer-footer-bg-2: $alto-3 !default;
+$footer-footer-link-text: $lochmara !default;
+$footer-heading-bg: $alto-2 !default;
+$footer-link-text: $scorpion !default;
+
+// Header
+$header-bg: $lochmara !default;
+$header-bg-nav-open: lighten($apple, 10%) !default;
+$header-search-text: $white !default;
+
+// News items
+$news-item-border: $sprout !default; /* CHANGE */
+$news-filter-archive-bg: $gallery-3 !default;
+$news-filter-bg-1: $white !default;
+$news-filter-bg-2: $mischka-t-06 !default;
+$news-filter-border: $sprout !default; /* CHANGE */
+$news-filter-heading-border: $silver !default;
+$news-filter-link-text: $emperor !default;
+$news-filter-shadow: $black-t-024 !default;
+$news-item-image-heading-text: $white !default;
+$news-item-image-text-bg: $mercury !default;
+$news-item-image-text-heading-text: $lochmara !default;
+$news-item-info-text: $lochmara !default;
+$news-item-text-bg: $lochmara !default;
+$news-item-text-body-text: $white !default;
+$news-item-text-heading-text: $white !default;
+$news-social-bg-1: $white !default;
+$news-social-bg-2: $mischka-t-06 !default;
+$news-social-border: $sprout !default; /* CHANGE */
+$news-social-heading-border: $silver !default;
+$news-social-shadow: $black-t-024 !default;
+
+// Pills
+$pill-primary-bg: $lochmara !default;
+$pill-secondary-bg: $dodger-blue !default;
+$pill-text: $white !default;
+
+// Price grid
+$price-grid-body-cell: $lochmara !default;
+$price-grid-body-row-even-bg: $athens-grey !default;
+$price-grid-body-title: $mine-shaft !default;
+$price-grid-border: $alto-2 !default;
+$price-grid-head-title: $havelock-blue !default;
+
+// Primary navigation
+$primary-nav-bg: $lochmara !default;
+$primary-nav-bg-hover: $white !default;
+$primary-nav-dropdown-bg: darken($apple, 10%) !default;
+$primary-nav-dropdown-bg-hover: $lochmara !default;
+$primary-nav-header-border: $white !default;
+$primary-nav-header-text: $white !default;
+$primary-nav-text: $white !default;
+$primary-nav-text-hover: $lochmara !default;
+
+// Sections
+$section-border: $dove-grey !default;
+$section-dark-bg: $dove-grey !default;
+$section-dark-text: $white !default;
+$section-header-border: $dodger-blue !default;
+
+// Tabbed content
+$tabbed-content-body-bg: $alabaster !default;
+$tabbed-content-body-shadow: $scorpion-t-03 !default;
+$tabbed-content-nav-border: $alto-2 !default;
+$tabbed-content-nav-border-active: $lochmara !default;
+$tabbed-content-nav-text: $scorpion !default;
+$tabbed-content-nav-text-active: $lochmara !default;
+
+// Venue navigation
+$venue-nav-container-bg-1: $white !default;
+$venue-nav-container-bg-2: $mischka-t-06 !default;
+$venue-nav-container-shadow: $black-t-024 !default;
+$venue-nav-text: $boulder !default;
+$venue-nav-text-active: $cod-grey !default;
+$venue-nav-text-border: $lochmara !default;
+
+//Weekly programme
+$weekly-prog-nav-border: $alto-2 !default;
+$weekly-prog-nav-border-active: $apple !default;
+$weekly-prog-nav-text: $scorpion !default;
+$weekly-prog-nav-text-active: $apple !default;
+$weekly-prog-nav-today:$lochmara !default;
+$weely-prog-pill-arvo:$mantis !default;
+$weely-prog-pill-evening:$apple !default;
+$weely-prog-old-session:$scorpion !default;
+$weely-prog-now-session:$havelock-blue !default;
+$calendar-btn-text:$white !default;
+$calendar-btn-bg:$apple !default;
+$calendar-bar-border:$apple !default;
+$calendar-bar-bg: $alto-3 !default;
+$calendar-print-border: $alto-2 !default;
+/* ---------- End Components ---------- */
+
+/* ---------- Pages ---------- */
+// Dynamic pages
+$dynamic-panel-bold-text: $lochmara !default;
+$dynamic-panel-link-text: $trinidad !default;
+
+// Venues memberships
+$membership-choose-bg: $alabaster !default;
+$membership-choose-border: $lochmara-t-043 !default;
+$membership-choose-dt-text: $havelock-blue !default;
+$membership-choose-header-bg-1: $white !default;
+$membership-choose-header-bg-2: $black-t-003 !default;
+$membership-choose-heading-text: $lochmara !default;
+$membership-choose-pricing-bg-1: $lochmara !default;
+$membership-choose-pricing-bg-2: $dodger-blue !default;
+$membership-choose-pricing-text: $white !default;
+$membership-choose-pricing-shadow: $black-t-015 !default;
+$membership-choose-shadow: $black-t-01 !default;
+$membership-short-term-bg: $alabaster !default;
+$membership-short-term-border: $lochmara-t-043 !default;
+$membership-short-term-header-bg-1: $white !default;
+$membership-short-term-header-bg-2: $black-t-003 !default;
+$membership-short-term-heading-text: $lochmara !default;
+$membership-short-term-pricing-bg-1: $lochmara !default;
+$membership-short-term-pricing-bg-2: $dodger-blue !default;
+$membership-short-term-pricing-shadow: $black-t-015 !default;
+$membership-short-term-shadow: $black-t-01 !default;
+$membership-short-term-pricing-text: $white !default;
+$membership-toggle-bg: $wild-sand !default;
+$membership-toggle-bg-active: $lochmara !default;
+$membership-toggle-border: $black-t-022 !default;
+$membership-toggle-border-active: transparent !default;
+$membership-toggle-divider-bg: $trinidad !default;
+$membership-toggle-divider-bg-active: $white !default;
+$membership-toggle-text: $scorpion !default;
+$membership-toggle-text-active: $white !default;
+$membership-types-bg: $wild-sand !default;
+$membership-types-border: $lochmara !default;
+$membership-types-shadow: $scorpion-t-03 !default;
+
+// Venues show
+$venue-activities-article-bg: $white !default;
+$venue-contact-information-link: $scorpion !default;
+$venue-join-day-pass-bg: $azure-radiance !default;
+$venue-join-day-pass-reflection: lighten($azure-radiance, 3%) !default;
+$venue-join-drop-in-bg: $dodger-blue !default;
+$venue-join-drop-in-reflection: lighten($dodger-blue, 3%) !default;
+$venue-join-join-bg: $lochmara !default;
+$venue-join-join-reflection: lighten($lochmara, 3%) !default;
+$venue-join-button-bg: $scorpion-t-02 !default;
+$venue-join-button-bg-hover: $scorpion-t-04 !default;
+$venue-join-button-text: $white !default;
+$venue-opening-hours-border: $alto !default;
+$venue-opening-hours-time: $havelock-blue !default;
+
+// Home
+$top-activity-facility-bg: $white !default;
+/* ---------- End Pages ---------- */

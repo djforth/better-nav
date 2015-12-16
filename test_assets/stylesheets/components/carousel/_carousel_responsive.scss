@@ -1,0 +1,25 @@
+#carousel {
+  @include breakpoint($mobile-breakpoint) {
+    .carousel-inner {
+      padding-bottom: 75%; /* 4:3 ratio, ie 480x360 */
+      // padding-bottom: 35.714285714286%; /* 14:5 ratio, ie 1680x600 */
+    }
+  }
+
+  @include breakpoint($mobile-and-tablet-breakpoint) {
+    
+  }
+
+  @include breakpoint($tablet-breakpoint) {
+    .carousel-inner {
+      padding-bottom: 56.25%; /* 16:9 ratio, ie 768x432 */
+      // padding-bottom: 35.714285714286%; /* 14:5 ratio, ie 1680x600 */
+    }
+  }
+
+  @include breakpoint($desktop-breakpoint) {
+    .carousel-inner {
+      padding-bottom: 46.875%; /* 32:15 ratio, ie 1280x600 */
+    }
+  }
+}

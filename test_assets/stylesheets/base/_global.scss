@@ -1,0 +1,35 @@
+body {
+  color: $primary-body-text;
+  font-family: "Lato", Arial, Verdana, sans-serif;
+  font-size: $base-font-size;
+  font-weight: normal;
+  position: relative;
+  right: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.center {
+  text-align: center;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.content-padding {
+  @include clearfix;
+  padding: 20px;
+}
+
+.hidden {
+  @include hidden;
+}
+
+.row {
+  @include clearfix;
+  margin: 20px 0;
+}

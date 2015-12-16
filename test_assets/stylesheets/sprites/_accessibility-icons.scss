@@ -1,0 +1,183 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$lift-name: 'lift';
+$lift-x: 0px;
+$lift-y: 67px;
+$lift-offset-x: 0px;
+$lift-offset-y: -67px;
+$lift-width: 59px;
+$lift-height: 59px;
+$lift-total-width: 232px;
+$lift-total-height: 195px;
+$lift-image: 'sprites/accessibility-icons.png';
+$lift: (0px, 67px, 0px, -67px, 59px, 59px, 232px, 195px, 'sprites/accessibility-icons.png', 'lift', );
+$poolside-facilities-name: 'poolside-facilities';
+$poolside-facilities-x: 178px;
+$poolside-facilities-y: 0px;
+$poolside-facilities-offset-x: -178px;
+$poolside-facilities-offset-y: 0px;
+$poolside-facilities-width: 54px;
+$poolside-facilities-height: 64px;
+$poolside-facilities-total-width: 232px;
+$poolside-facilities-total-height: 195px;
+$poolside-facilities-image: 'sprites/accessibility-icons.png';
+$poolside-facilities: (178px, 0px, -178px, 0px, 54px, 64px, 232px, 195px, 'sprites/accessibility-icons.png', 'poolside-facilities', );
+$poolside-hoist-name: 'poolside-hoist';
+$poolside-hoist-x: 0px;
+$poolside-hoist-y: 126px;
+$poolside-hoist-offset-x: 0px;
+$poolside-hoist-offset-y: -126px;
+$poolside-hoist-width: 46px;
+$poolside-hoist-height: 69px;
+$poolside-hoist-total-width: 232px;
+$poolside-hoist-total-height: 195px;
+$poolside-hoist-image: 'sprites/accessibility-icons.png';
+$poolside-hoist: (0px, 126px, 0px, -126px, 46px, 69px, 232px, 195px, 'sprites/accessibility-icons.png', 'poolside-hoist', );
+$wheelchair-p-name: 'wheelchair-p';
+$wheelchair-p-x: 0px;
+$wheelchair-p-y: 0px;
+$wheelchair-p-offset-x: 0px;
+$wheelchair-p-offset-y: 0px;
+$wheelchair-p-width: 62px;
+$wheelchair-p-height: 67px;
+$wheelchair-p-total-width: 232px;
+$wheelchair-p-total-height: 195px;
+$wheelchair-p-image: 'sprites/accessibility-icons.png';
+$wheelchair-p: (0px, 0px, 0px, 0px, 62px, 67px, 232px, 195px, 'sprites/accessibility-icons.png', 'wheelchair-p', );
+$wheelchair-wc-name: 'wheelchair-wc';
+$wheelchair-wc-x: 123px;
+$wheelchair-wc-y: 0px;
+$wheelchair-wc-offset-x: -123px;
+$wheelchair-wc-offset-y: 0px;
+$wheelchair-wc-width: 55px;
+$wheelchair-wc-height: 66px;
+$wheelchair-wc-total-width: 232px;
+$wheelchair-wc-total-height: 195px;
+$wheelchair-wc-image: 'sprites/accessibility-icons.png';
+$wheelchair-wc: (123px, 0px, -123px, 0px, 55px, 66px, 232px, 195px, 'sprites/accessibility-icons.png', 'wheelchair-wc', );
+$wheelchair-name: 'wheelchair';
+$wheelchair-x: 62px;
+$wheelchair-y: 0px;
+$wheelchair-offset-x: -62px;
+$wheelchair-offset-y: 0px;
+$wheelchair-width: 61px;
+$wheelchair-height: 65px;
+$wheelchair-total-width: 232px;
+$wheelchair-total-height: 195px;
+$wheelchair-image: 'sprites/accessibility-icons.png';
+$wheelchair: (62px, 0px, -62px, 0px, 61px, 65px, 232px, 195px, 'sprites/accessibility-icons.png', 'wheelchair', );
+$spritesheet-width: 232px;
+$spritesheet-height: 195px;
+$spritesheet-image: 'sprites/accessibility-icons.png';
+$spritesheet-sprites: ($lift, $poolside-facilities, $poolside-hoist, $wheelchair-p, $wheelchair-wc, $wheelchair, );
+$spritesheet: (232px, 195px, 'sprites/accessibility-icons.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-lift {
+  background-image: image-url('sprites/accessibility-icons.png');
+  background-position: 0px -67px;
+  width: 59px;
+  height: 59px;
+}
+.icon-poolside-facilities {
+  background-image: image-url('sprites/accessibility-icons.png');
+  background-position: -178px 0px;
+  width: 54px;
+  height: 64px;
+}
+.icon-poolside-hoist {
+  background-image: image-url('sprites/accessibility-icons.png');
+  background-position: 0px -126px;
+  width: 46px;
+  height: 69px;
+}
+.icon-wheelchair-p {
+  background-image: image-url('sprites/accessibility-icons.png');
+  background-position: 0px 0px;
+  width: 62px;
+  height: 67px;
+}
+.icon-wheelchair-wc {
+  background-image: image-url('sprites/accessibility-icons.png');
+  background-position: -123px 0px;
+  width: 55px;
+  height: 66px;
+}
+.icon-wheelchair {
+  background-image: image-url('sprites/accessibility-icons.png');
+  background-position: -62px 0px;
+  width: 61px;
+  height: 65px;
+}

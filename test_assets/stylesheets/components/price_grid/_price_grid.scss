@@ -1,0 +1,72 @@
+.price-grid {
+  border-collapse: collapse;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.price-grid-body-row {
+  border-top: 1px solid $price-grid-border;
+
+  &:nth-child(even) {
+    background-color: $price-grid-body-row-even-bg;
+  }
+
+  .price-grid-cell {
+    color: $price-grid-body-cell;
+    font-size: 3.063em; /* 49px */
+    font-weight: 300;
+  }
+
+  .price-grid-header {
+    span {
+      color: $price-grid-body-title;
+    }
+  }
+}
+
+.price-grid-body-row, .price-grid-head-row {
+  display: table-row;
+}
+
+.price-grid-cell {
+  text-align: center;
+}
+
+.price-grid-cell, .price-grid-header {
+  // layout
+  display: table-cell;
+  min-height: 1px;
+  padding: 30px 20px;
+  vertical-align: middle;
+  word-break: break-word;
+
+  // styling
+  border-right: 1px solid $price-grid-border;
+
+  &:last-child {
+    border-right: 0 none;
+  }
+}
+
+.price-grid-head-row {
+  .price-grid-header {
+    text-align: center;
+
+    span {
+      &.title {
+        // layout
+        display: block;
+
+        // styling
+        color: $price-grid-head-title;
+      }
+    }
+  }
+}
+
+.price-grid-header {
+  &:first-child {
+    width: 20%;
+  }
+}

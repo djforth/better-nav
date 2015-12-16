@@ -1,0 +1,139 @@
+@include breakpoint($mobile-breakpoint) {
+  
+}
+
+@include breakpoint($mobile-and-tablet-breakpoint) {
+
+  #primary-nav-list {
+    // layout
+    position: fixed;
+    top: 0;
+
+    // styling
+    @include transition(right 0.2s ease-in-out);
+    background-color: $primary-nav-bg;
+
+    li {
+      float: left;
+      width: 100%;
+    }
+
+    .dropdown {
+      display: none;
+    }
+
+    .dropdown-parent {
+      & > a {
+        position: relative;
+
+        &:after {
+          // layout
+          content: "\25b6";
+          position: absolute;
+          top: 15px;
+          right: 10px;
+
+          // styling
+          @include transition(color 0.2s ease-in-out);
+          color: $primary-nav-text;
+        }
+
+        &:hover {
+          &:after {
+            color: $primary-nav-text-hover;
+          }
+        }
+
+        &.open {
+          &:after {
+            content: "\25bc";
+          }
+        }
+      }
+    }
+  }
+
+  #primary-nav-toggle {
+    display: block;
+    float: right;
+    position: relative;
+    top: 10px;
+  }
+}
+
+@include breakpoint($tablet-breakpoint) {
+  body {
+    &.nav-open {
+      #primary-nav-list {
+        width: percentage(1/2);
+      }
+    }
+  }
+
+  #primary-nav-list {
+    right: -(percentage(1/2));
+    width: percentage(1/2);
+  }
+}
+
+@include breakpoint($desktop-breakpoint) {
+  .venue-nav {
+    float: right;
+    position: relative;
+    left: -50%;
+  }
+
+  .venue-nav-list {
+    position: relative;
+    left: 50%;
+    
+    .dropdown {
+      // layout
+      display: none;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      z-index: 2;
+
+      // styling
+      @include transition(opacity 0.2s ease-in-out);
+
+      &:hover {
+        background-color: $primary-nav-dropdown-bg-hover;
+      }
+
+      li {
+        // layout
+        clear: both;
+        white-space: nowrap;
+        width: 100%;
+
+        // styling
+        background-color: $primary-nav-dropdown-bg;
+      }
+    }
+
+    .dropdown-parent {
+      // layout
+      position: relative;
+
+      // styling
+      @include transition(background-color 0.2s ease-in-out);
+
+      &:hover {
+        .dropdown {
+          display: block !important; /* Needs !important to override JS */
+        }
+      }
+    }
+
+    .duplicate {
+      display: none;
+    }
+  }
+
+  .venue-nav-header, .venue-nav-toggle {
+    display: none;
+  }
+}

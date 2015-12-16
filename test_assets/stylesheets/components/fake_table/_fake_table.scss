@@ -1,0 +1,55 @@
+.fake-table {
+  em, .em {
+    color: $table-em;
+    font-style: normal;
+    font-weight: 700;
+  }
+}
+
+.tbody {
+  font-size: 0.813em; /* 13px */
+
+  .tr {
+    &:nth-child(even) {
+      background-color: $row-even;
+    }
+
+    .places {
+      font-size: 2.46153846153846em; /* 32px / 13px */
+    }
+
+    .session-full {
+      display: block;
+      font-family: "Garage Gothic", Arial, Helvetica, sans-serif;
+      font-size: 1.30769230769231em; /* 17px / 13px */
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.tbody, .thead, .tr {
+  @include clearfix;
+}
+
+.thead {
+  // layout
+  padding-bottom: 5px;
+
+  // styling
+  color: $thead-text;
+  font-size: 0.75em; /* 12px */
+  text-transform: uppercase;
+}
+
+.tr {
+  // layout
+  padding: 10px 0;
+
+  // styling
+  border-bottom: 1px solid $tr-border;
+
+  .button {
+    font-size: 1.84615384615385em; /* 24px / 13px */
+  }
+}

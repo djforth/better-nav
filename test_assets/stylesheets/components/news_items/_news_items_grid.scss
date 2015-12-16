@@ -1,0 +1,111 @@
+section {
+  &.news-items-grid {
+    article {
+      // layout
+      margin: 0 10px 20px;
+      position: relative;
+
+      // styling
+      background-color: white;
+
+      &.news-item-image {
+        h1 {
+          // layout
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          right: 20px;
+          z-index: 1;
+  
+          // styling
+          color: $news-item-image-heading-text;
+        }
+
+        .text-content {
+          position: relative;
+        }
+      }
+
+      &.news-item-image-text {
+        background-color: $news-item-image-text-bg;
+
+        h1 {
+          color: $news-item-image-text-heading-text;
+        }
+
+        .text-content {
+          position: relative;
+
+          &:before {
+            // layout
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -13px;
+            margin: auto;
+
+            // styling
+            @include sprite($arrow-grey);
+          }
+        }
+      }
+
+      &.news-item-image-text, &.news-item-text {
+        .text-content {
+          @include clearfix;
+          padding: 20px;
+        }
+      }
+
+      &.news-item-text {
+        background-color: $news-item-text-bg;
+
+        h1 {
+          color: $news-item-text-heading-text;
+        }
+
+        p {
+          color: $news-item-text-body-text;
+        }
+      }
+
+      footer {
+        @include clearfix;
+      }
+
+      h1 {
+        // reset
+        @include reset-normalize((
+          margin: 0 0 10px
+        )...);
+      }
+
+      .button {
+        position: absolute;
+        right: 2px;
+        bottom: 2px;
+      }
+
+      .image-container {
+        height: 0;
+        position: relative;
+        padding-bottom: 100%; /* News item images are always going to be square */
+
+        img {
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: auto;
+        }
+      }
+    }
+
+    .articles {
+      // layout
+      padding: 20px 0;
+    }  
+  }
+}
+

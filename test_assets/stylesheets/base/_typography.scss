@@ -1,0 +1,161 @@
+$base-font-size: 1em; /* 16px */
+$base-line-height: 24; /* 24px based on 16px body font size */
+
+h1, .alpha {
+  font-size: 3.063em; /* 49px */
+  line-height: 1em;
+}
+
+h2, .beta {
+  font-size: 1.688em; /* 27px */
+  line-height: 1em;
+}
+
+h3, .gamma {
+  font-size: 1.563em; /* 25px */
+  line-height: 30 / 25 + em;
+}
+
+h4, .delta {
+  font-size: 1.25em; /* 20px */
+  line-height: $base-line-height / 20 + em;
+}
+
+h4, .epsilon {
+  font-size: 1em; /* 16px */
+  line-height: $base-line-height / 16 + em;
+}
+
+h5, .zeta {
+  font-size: 0.938em; /* 15px */
+  line-height: $base-line-height / 15 + em; 
+}
+
+h6, .eta {
+  font-size: 0.875em; /* 14px */
+  line-height: $base-line-height / 14 + em;
+}
+
+.theta {
+  font-size: 0.813em; /* 13px */
+  line-height: $base-line-height / 13 + em;
+}
+
+.iota {
+  font-size: 0.688em; /* 11px */
+  line-height: $base-line-height / 11 + em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 10px;
+}
+
+dd, dt, li, p {
+  font-size: 0.813em; /* 13px */
+  line-height: $base-line-height / 13 + em; /* 24px / 13px */
+}
+
+p {
+  @include reset-normalize;
+  margin-bottom: 10px;
+
+  &.tertiary {
+    color: $tertiary-body-text;
+  }
+}
+
+strong, .bold-weight {
+  font-weight: 700 !important;
+}
+
+ul {
+  &.bullets {
+    list-style: disc inside;
+
+    li {
+      margin-bottom: 10px;
+     }
+  }
+}
+
+.body-link {
+  color: $body-link;
+  text-decoration: none;
+
+  &:before {
+    // layout
+    content: "";
+    display: inline-block;
+    margin-right: 5px;
+
+    // styling
+    @include sprite($arrow-orange);
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Garage Gothic Bold
+.gg {
+  font-family: "Garage Gothic", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &.primary {
+    color: $primary-heading-text;
+  }
+
+  &.secondary {
+    color: $secondary-heading-text;
+  }
+
+  &.tertiary {
+    color: $tertiary-heading-text;
+  }
+
+  &.alpha {
+    font-size: 5.625em; /* 90px */
+    line-height: 1em;
+  }
+
+  &.beta {
+    font-size: 3.875em; /* 62px */
+    line-height: 1em;
+  }
+
+  &.gamma {
+    font-size: 3.313em; /* 53px */
+    line-height: 1em;
+  }
+
+  &.delta {
+    font-size: 2.625em; /* 42px */
+    line-height: 1em;
+  }
+
+  &.epsilon {
+    font-size: 2.188em; /* 35px */
+    line-height: 1em;
+  }
+
+  &.zeta {
+    font-size: 2.125em; /* 34px */
+    line-height: 1em; 
+  }
+}
+// End Garage Gothic Bold
+
+.italic {
+  font-style: italic;
+}
+
+.light-weight {
+  font-weight: 300 !important;
+}
+
+.up-c {
+  text-transform: uppercase;
+}

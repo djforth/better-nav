@@ -1,0 +1,188 @@
+.touch-nav {
+    // normalize resets
+    @include reset-normalize;
+    @include clearfix;
+    position: relative;
+
+    //Layout
+    width:100%;
+    height:70px;
+
+    &:after{
+      //Layout
+      content: "";
+      position: absolute;
+      width:100%;
+      height: 1px;
+      bottom:20px;
+      left:0;
+      right:0;
+
+      //Styling
+      background-color: $weekly-prog-nav-border;
+    }
+    // //Styling
+    // border-bottom: 1px solid $weekly-prog-nav-border;
+
+    .nav-items{
+      @include reset-normalize;
+      position: absolute;
+      left:0;
+      height:50px;
+      transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    }
+
+
+
+    .list-holder{
+      width: calc(100% - 100px);
+      overflow: hidden;
+      float: left;
+      position: relative;
+      height:70px;
+    }
+
+    .nav-mover{
+      // normalize resets
+      @include reset-normalize;
+
+      // layout
+      float: left;
+      position: relative;
+      margin:15px;
+      width:10px;
+      height:20px;
+
+      // styling
+      font-size: 1.25em; /* 20px */
+      font-weight: 300;
+      line-height: 1em;
+      background-size: contain;
+
+      &:after{
+        content:"";
+        position: absolute;
+
+        top:0;
+        // left:0;
+        // right:0;
+        width:1px;
+        height:20px;
+
+        background-color:$weekly-prog-nav-border;
+     }
+
+      &.move-left{
+        background:url("data:image/svg+xml;utf8,<svg id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"157.3 491.7 21.7 39\"><style>.st0{fill: #cfcfcf}</style><path class=\"st0\" d=\"M177 530.7l-19.6-19.5 2.1-2.1 19.6 19.5-2.1 2.1z\"/><path class=\"st0\" d=\"M179 493.8l-19.5 19.6-2.1-2.1 19.5-19.6 2.1 2.1z\"/></svg>") center center no-repeat;
+         // border-right:1px solid $weekly-prog-nav-border;
+         &:after{
+            right:-20px;
+         }
+
+      }
+
+       &.move-right{
+         float:right;
+         background:url("data:image/svg+xml;utf8,<svg id='Layer_1' xmlns='http://www.w3.org/2000/svg' viewBox='157.4 491.6 21.7 39.2'><style>.st0{fill:#cfcfcf}</style><path class='st0' d='M159.5 491.6l19.6 19.6-2.1 2.1-19.6-19.6 2.1-2.1z'/><path class='st0' d='M157.4 528.6L177 509l2.1 2.1-19.6 19.6-2.1-2.1z'/></svg>") center center no-repeat;
+
+         &:after{
+            left:-20px;
+         }
+
+      }
+    }
+
+
+
+    .date-nav-item-link  {
+      // layout
+      display: block;
+      padding: 0 20px;
+      margin:15px 0;
+      position: relative;
+
+      // styling
+      // border-bottom: 1px solid $weekly-prog-nav-border;
+      color: $weekly-prog-nav-text;
+      text-decoration: none;
+      text-transform: uppercase;
+
+
+    }
+
+    .date-nav-item {
+      // normalize resets
+      @include reset-normalize;
+
+      // layout
+      float: left;
+      position: relative;
+      height:50px;
+
+      // styling
+      font-size: 1.25em; /* 20px */
+      font-weight: 300;
+      line-height: 1em;
+
+
+      &.active {
+        // position: relative;
+        &:after {
+            // layout
+          content: "";
+          width: 95%;
+          height: 2px;
+          display: inline-block;
+          position: absolute;
+          bottom:-0.5px;
+          left:0;
+          right:0;
+          background-color: $weekly-prog-nav-border-active;
+
+        }
+
+
+        a{
+          color: $weekly-prog-nav-text-active;
+          // font-weight: 400;
+
+
+          &:after {
+            // layout
+            content: "";
+            display: inline-block;
+            margin: auto;
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: -19.5px;
+
+            // styling
+            @include sprite($arrow-green-down);
+          }
+        }
+
+      }
+
+    }
+
+    .loading-session{
+      color:$silver !important;
+    }
+
+    .loading{
+      // border:1px solid red;
+      position: absolute;
+      left:0;
+      top:0;
+      z-index:100;
+      width:100%;
+      height:50px;
+
+      background:$silver-t-05 url("data:image/svg+xml;utf8,<svg width='38' height='38' viewBox='0 0 38 38' xmlns='http://www.w3.org/2000/svg' stroke='#fff'><g transform='translate(1 1)' stroke-width='2' fill='none' fill-rule='evenodd'><circle stroke-opacity='.5' cx='18' cy='18' r='18'/><path d='M36 18c0-9.94-8.06-18-18-18'><animateTransform attributeName='transform' type='rotate' from='0 18 18' to='360 18 18' dur='1s' repeatCount='indefinite'/></path></g></svg>") center center no-repeat;
+
+      // background-size: contain;
+    }
+  }

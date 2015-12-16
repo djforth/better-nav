@@ -1,0 +1,268 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$arrow-breadcrumbs-name: 'arrow-breadcrumbs';
+$arrow-breadcrumbs-x: 53px;
+$arrow-breadcrumbs-y: 20px;
+$arrow-breadcrumbs-offset-x: -53px;
+$arrow-breadcrumbs-offset-y: -20px;
+$arrow-breadcrumbs-width: 6px;
+$arrow-breadcrumbs-height: 9px;
+$arrow-breadcrumbs-total-width: 61px;
+$arrow-breadcrumbs-total-height: 54px;
+$arrow-breadcrumbs-image: 'sprites/arrows.png';
+$arrow-breadcrumbs: (53px, 20px, -53px, -20px, 6px, 9px, 61px, 54px, 'sprites/arrows.png', 'arrow-breadcrumbs', );
+$arrow-green-down-name: 'arrow-green-down';
+$arrow-green-down-x: 47px;
+$arrow-green-down-y: 29px;
+$arrow-green-down-offset-x: -47px;
+$arrow-green-down-offset-y: -29px;
+$arrow-green-down-width: 10px;
+$arrow-green-down-height: 5px;
+$arrow-green-down-total-width: 61px;
+$arrow-green-down-total-height: 54px;
+$arrow-green-down-image: 'sprites/arrows.png';
+$arrow-green-down: (47px, 29px, -47px, -29px, 10px, 5px, 61px, 54px, 'sprites/arrows.png', 'arrow-green-down', );
+$arrow-green-up-name: 'arrow-green-up';
+$arrow-green-up-x: 14px;
+$arrow-green-up-y: 13px;
+$arrow-green-up-offset-x: -14px;
+$arrow-green-up-offset-y: -13px;
+$arrow-green-up-width: 10px;
+$arrow-green-up-height: 5px;
+$arrow-green-up-total-width: 61px;
+$arrow-green-up-total-height: 54px;
+$arrow-green-up-image: 'sprites/arrows.png';
+$arrow-green-up: (14px, 13px, -14px, -13px, 10px, 5px, 61px, 54px, 'sprites/arrows.png', 'arrow-green-up', );
+$arrow-grey-name: 'arrow-grey';
+$arrow-grey-x: 0px;
+$arrow-grey-y: 0px;
+$arrow-grey-offset-x: 0px;
+$arrow-grey-offset-y: 0px;
+$arrow-grey-width: 26px;
+$arrow-grey-height: 13px;
+$arrow-grey-total-width: 61px;
+$arrow-grey-total-height: 54px;
+$arrow-grey-image: 'sprites/arrows.png';
+$arrow-grey: (0px, 0px, 0px, 0px, 26px, 13px, 61px, 54px, 'sprites/arrows.png', 'arrow-grey', );
+$arrow-orange-2-name: 'arrow-orange-2';
+$arrow-orange-2-x: 47px;
+$arrow-orange-2-y: 0px;
+$arrow-orange-2-offset-x: -47px;
+$arrow-orange-2-offset-y: 0px;
+$arrow-orange-2-width: 14px;
+$arrow-orange-2-height: 20px;
+$arrow-orange-2-total-width: 61px;
+$arrow-orange-2-total-height: 54px;
+$arrow-orange-2-image: 'sprites/arrows.png';
+$arrow-orange-2: (47px, 0px, -47px, 0px, 14px, 20px, 61px, 54px, 'sprites/arrows.png', 'arrow-orange-2', );
+$arrow-orange-3-name: 'arrow-orange-3';
+$arrow-orange-3-x: 0px;
+$arrow-orange-3-y: 13px;
+$arrow-orange-3-offset-x: 0px;
+$arrow-orange-3-offset-y: -13px;
+$arrow-orange-3-width: 14px;
+$arrow-orange-3-height: 21px;
+$arrow-orange-3-total-width: 61px;
+$arrow-orange-3-total-height: 54px;
+$arrow-orange-3-image: 'sprites/arrows.png';
+$arrow-orange-3: (0px, 13px, 0px, -13px, 14px, 21px, 61px, 54px, 'sprites/arrows.png', 'arrow-orange-3', );
+$arrow-orange-name: 'arrow-orange';
+$arrow-orange-x: 40px;
+$arrow-orange-y: 14px;
+$arrow-orange-offset-x: -40px;
+$arrow-orange-offset-y: -14px;
+$arrow-orange-width: 5px;
+$arrow-orange-height: 7px;
+$arrow-orange-total-width: 61px;
+$arrow-orange-total-height: 54px;
+$arrow-orange-image: 'sprites/arrows.png';
+$arrow-orange: (40px, 14px, -40px, -14px, 5px, 7px, 61px, 54px, 'sprites/arrows.png', 'arrow-orange', );
+$arrow-white-name: 'arrow-white';
+$arrow-white-x: 26px;
+$arrow-white-y: 0px;
+$arrow-white-offset-x: -26px;
+$arrow-white-offset-y: 0px;
+$arrow-white-width: 21px;
+$arrow-white-height: 14px;
+$arrow-white-total-width: 61px;
+$arrow-white-total-height: 54px;
+$arrow-white-image: 'sprites/arrows.png';
+$arrow-white: (26px, 0px, -26px, 0px, 21px, 14px, 61px, 54px, 'sprites/arrows.png', 'arrow-white', );
+$arrow-news-name: 'arrow_news';
+$arrow-news-x: 0px;
+$arrow-news-y: 34px;
+$arrow-news-offset-x: 0px;
+$arrow-news-offset-y: -34px;
+$arrow-news-width: 14px;
+$arrow-news-height: 20px;
+$arrow-news-total-width: 61px;
+$arrow-news-total-height: 54px;
+$arrow-news-image: 'sprites/arrows.png';
+$arrow-news: (0px, 34px, 0px, -34px, 14px, 20px, 61px, 54px, 'sprites/arrows.png', 'arrow_news', );
+$arrow-news-filter-name: 'arrow_news_filter';
+$arrow-news-filter-x: 47px;
+$arrow-news-filter-y: 20px;
+$arrow-news-filter-offset-x: -47px;
+$arrow-news-filter-offset-y: -20px;
+$arrow-news-filter-width: 6px;
+$arrow-news-filter-height: 9px;
+$arrow-news-filter-total-width: 61px;
+$arrow-news-filter-total-height: 54px;
+$arrow-news-filter-image: 'sprites/arrows.png';
+$arrow-news-filter: (47px, 20px, -47px, -20px, 6px, 9px, 61px, 54px, 'sprites/arrows.png', 'arrow_news_filter', );
+$arrow-news-hover-name: 'arrow_news_hover';
+$arrow-news-hover-x: 26px;
+$arrow-news-hover-y: 14px;
+$arrow-news-hover-offset-x: -26px;
+$arrow-news-hover-offset-y: -14px;
+$arrow-news-hover-width: 14px;
+$arrow-news-hover-height: 20px;
+$arrow-news-hover-total-width: 61px;
+$arrow-news-hover-total-height: 54px;
+$arrow-news-hover-image: 'sprites/arrows.png';
+$arrow-news-hover: (26px, 14px, -26px, -14px, 14px, 20px, 61px, 54px, 'sprites/arrows.png', 'arrow_news_hover', );
+$spritesheet-width: 61px;
+$spritesheet-height: 54px;
+$spritesheet-image: 'sprites/arrows.png';
+$spritesheet-sprites: ($arrow-breadcrumbs, $arrow-green-down, $arrow-green-up, $arrow-grey, $arrow-orange-2, $arrow-orange-3, $arrow-orange, $arrow-white, $arrow-news, $arrow-news-filter, $arrow-news-hover, );
+$spritesheet: (61px, 54px, 'sprites/arrows.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-arrow-breadcrumbs {
+  background-image: image-url('sprites/arrows.png');
+  background-position: -53px -20px;
+  width: 6px;
+  height: 9px;
+}
+.icon-arrow-green-down {
+  background-image: image-url('sprites/arrows.png');
+  background-position: -47px -29px;
+  width: 10px;
+  height: 5px;
+}
+.icon-arrow-green-up {
+  background-image: image-url('sprites/arrows.png');
+  background-position: -14px -13px;
+  width: 10px;
+  height: 5px;
+}
+.icon-arrow-grey {
+  background-image: image-url('sprites/arrows.png');
+  background-position: 0px 0px;
+  width: 26px;
+  height: 13px;
+}
+.icon-arrow-orange-2 {
+  background-image: image-url('sprites/arrows.png');
+  background-position: -47px 0px;
+  width: 14px;
+  height: 20px;
+}
+.icon-arrow-orange-3 {
+  background-image: image-url('sprites/arrows.png');
+  background-position: 0px -13px;
+  width: 14px;
+  height: 21px;
+}
+.icon-arrow-orange {
+  background-image: image-url('sprites/arrows.png');
+  background-position: -40px -14px;
+  width: 5px;
+  height: 7px;
+}
+.icon-arrow-white {
+  background-image: image-url('sprites/arrows.png');
+  background-position: -26px 0px;
+  width: 21px;
+  height: 14px;
+}
+.icon-arrow_news {
+  background-image: image-url('sprites/arrows.png');
+  background-position: 0px -34px;
+  width: 14px;
+  height: 20px;
+}
+.icon-arrow_news_filter {
+  background-image: image-url('sprites/arrows.png');
+  background-position: -47px -20px;
+  width: 6px;
+  height: 9px;
+}
+.icon-arrow_news_hover {
+  background-image: image-url('sprites/arrows.png');
+  background-position: -26px -14px;
+  width: 14px;
+  height: 20px;
+}

@@ -1,0 +1,388 @@
+@include breakpoint($mobile-breakpoint) {
+
+}
+
+@include breakpoint($mobile-and-tablet-breakpoint) {
+
+}
+
+@include breakpoint($tablet-and-desktop-breakpoint) {
+  .primery-nav{
+    position: relative;
+
+     //Style
+    background: $desktop-nav-bg;
+    color:$desktop-nav-txt;
+
+
+    .nav-holder{
+      position: relative;
+      float: left;
+      left:50%;
+
+      .primary-nav-list {
+        position: relative;
+        float: left;
+        left:-50%;
+
+      }
+    }
+  }
+
+  .single{
+    //Layout
+    position: absolute;
+    left:0;
+    top:100%;
+    width:100%;
+    //style
+    background: $desktop-nav-l1-bg;
+    box-shadow: $desktop-nav-l1-shadow;
+    // Level 1 Nav -
+    .level-1 {
+      .home-link{
+        width:20%;
+        height:50px;
+        float:left;
+        background: $desktop-nav-l1-home-bg;
+
+        a{
+          display: block;
+          float: left;
+          padding:15px 25px;
+
+          //Styling
+          text-decoration: none;
+          color: $desktop-nav-l1-home-txt;
+          font-size: 0.813em;
+        }
+      }
+    }
+
+    .touch-sub-nav{
+      width: 80%;
+      float: right;
+      .list-holder{
+        width: calc(100% - 100px);
+        overflow: hidden;
+        float: left;
+        position: relative;
+        height:40px;
+      }
+
+      .nav-mover{
+        // normalize resets
+        @include reset-normalize;
+
+        // layout
+        float: left;
+        position: relative;
+        margin:15px;
+        width:10px;
+        height:20px;
+
+        // styling
+        font-size: 1.25em; /* 20px */
+        font-weight: 300;
+        line-height: 1em;
+        background-size: contain;
+
+        &:after{
+          content:"";
+          position: absolute;
+
+          top:0;
+          // left:0;
+          // right:0;
+          width:1px;
+          height:20px;
+
+          background-color:$weekly-prog-nav-border;
+       }
+
+        &.move-left{
+          background:url("data:image/svg+xml;utf8,<svg id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"157.3 491.7 21.7 39\"><style>.st0{fill: #cfcfcf}</style><path class=\"st0\" d=\"M177 530.7l-19.6-19.5 2.1-2.1 19.6 19.5-2.1 2.1z\"/><path class=\"st0\" d=\"M179 493.8l-19.5 19.6-2.1-2.1 19.5-19.6 2.1 2.1z\"/></svg>") center center no-repeat;
+           // border-right:1px solid $weekly-prog-nav-border;
+           &:after{
+              right:-20px;
+           }
+
+        }
+
+         &.move-right{
+           float:right;
+           background:url("data:image/svg+xml;utf8,<svg id='Layer_1' xmlns='http://www.w3.org/2000/svg' viewBox='157.4 491.6 21.7 39.2'><style>.st0{fill:#cfcfcf}</style><path class='st0' d='M159.5 491.6l19.6 19.6-2.1 2.1-19.6-19.6 2.1-2.1z'/><path class='st0' d='M157.4 528.6L177 509l2.1 2.1-19.6 19.6-2.1-2.1z'/></svg>") center center no-repeat;
+
+           &:after{
+              left:-20px;
+           }
+
+        }
+      }
+    }
+
+    .secondary-nav-touch-list{
+        @include reset-normalize;
+        position: absolute;
+        left:0;
+        height:50px;
+        transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        li{
+          float:left;
+          display: inline-block;
+
+          a{
+            display: block;
+            float: left;
+            padding:10px 25px;
+
+            //Styling
+            text-decoration: none;
+            color: $desktop-nav-l1-txt;
+            font-size: 1em;
+          }
+        }
+
+        .secondary-nav-list{
+          &.level-1{
+
+            //style
+            li{
+              float:left;
+              display: inline-block;
+
+              a{
+                display: block;
+                float: left;
+                padding:20px 30px;
+
+                //Styling
+                text-decoration: none;
+                color: $desktop-nav-l1-txt;
+                font-size: 1.154em;
+              }
+            }
+          }
+        }
+      }
+
+    // Level 2 0r more nav
+    .level-2 {
+
+
+      // .title-link{
+      //   background-color: $desktop-nav-list;
+      // }
+
+      .home-link{
+        margin: 0 20px;
+        padding:30px 0;
+
+        a{
+          font-size: 1.438em;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-weight: 300;
+        }
+      }
+
+      .nav-list{
+        @include reset-normalize;
+        //styling
+        background-color: $desktop-nav-list;
+
+
+        float:left;
+        margin-top:20px;
+
+        //styling
+        background-color: $desktop-nav-list;
+
+
+        .secondary-nav-list{
+           margin-top:20px;
+        }
+      }
+
+
+
+      .secondary-nav-list{
+        border-bottom: 1px solid $desktop-nav-l2-brdr;
+        li{
+          @include clearfix;
+          position: relative;
+
+          border-top: 1px solid $desktop-nav-l2-brdr;
+          border-right: 1px solid $desktop-nav-l2-brdr;
+
+
+          &.active, &:hover{
+            a{
+              &:after{
+                content: "";
+                position: absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                width:10px;
+                height:100%;
+                display: block;
+
+                background-color: $desktop-nav-l2-hover;
+              }
+            }
+
+          }
+
+
+          a{
+            display: block;
+            margin: 10px 10px 10px 30px;
+            text-decoration: none;
+            color:$desktop-nav-l2-txt;
+            // font-weight: 300;
+
+
+          }
+        }
+      }
+    }
+
+    .levels{
+
+
+      .home-link, .title-link{
+
+        border-bottom:1px solid $desktop-nav-l2-home-border;
+        box-shadow: $desktop-nav-l2-home-brdr-sh;
+        &:before{
+          content:"";
+          display: inline-block;
+          width:10px;
+          height:10px;
+          margin: 3px 10px 3px 0;
+
+          background: url("data:image/svg+xml;utf8,<svg id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-281 404.9 6.6 8.9\"><style>.st0{fill:none;stroke:#55a440;stroke-width:2;stroke-miterlimit:10}</style><path class=\"st0\" d=\"M-280 405.9l4 3.5-4 3.5\"/></svg>") center center no-repeat;
+          background-size: cover;
+
+        }
+
+        a{
+          //Styles
+          color: $desktop-nav-l2-home-txt;
+          text-decoration: none;
+        }
+      }
+
+      .title-link{
+        margin: 0 20px;
+        padding: 15px 0;
+      }
+    }
+
+    .level-3, .level-4{
+      margin-top: 20px;
+
+      //styling
+      background-color: $desktop-nav-list;
+
+
+
+      .nav-list{
+        // margin:10px 20px;
+
+        li{
+          a{
+            //layout
+            display: block;
+            padding: 5px 20px;
+
+            //Styles
+            text-decoration: none;
+            color:$desktop-nav-l2-txt;
+
+            &:hover {
+              //style
+              background-color: $desktop-nav-l3-hover-bg;
+              color:$desktop-nav-l3-hover-txt;
+            }
+          }
+        }
+      }
+    }
+
+    .level-3 {
+      border-right: 1px solid $desktop-nav-l2-home-border;
+
+    }
+
+  }
+
+}
+
+@include breakpoint($tablet-breakpoint) {
+  .single{
+    .level-2 {
+      .nav-list{
+        width:33.33%;
+      }
+    }
+
+    .level-3 {
+      width: 33.33%;
+      float:left;
+
+    }
+
+    .level-4 {
+      // $width: percentage(6/12);
+      width:calc(33.33% - 2px);
+      float:left;
+
+      // .nav-list{
+      //   // margin:10px 20px;
+
+      //   li{
+      //     width:50%;
+      //     float:left;
+      //   }
+      // }
+    }
+  }
+}
+
+@include breakpoint($desktop-breakpoint) {
+  .single{
+    .level-2 {
+      .nav-list{
+        width:percentage(3/12);
+      }
+    }
+
+    .level-3 {
+      width: percentage(3/12);
+      float:left;
+
+    }
+
+    .level-4 {
+      // $width: percentage(6/12);
+      width:calc(50% - 2px);
+      float:left;
+
+      .nav-list{
+        // margin:10px 20px;
+
+        li{
+          width:50%;
+          float:left;
+        }
+      }
+    }
+  }
+}
+
+
+
+

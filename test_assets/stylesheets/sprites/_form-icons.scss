@@ -1,0 +1,132 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$form-error-name: 'form-error';
+$form-error-x: 40px;
+$form-error-y: 0px;
+$form-error-offset-x: -40px;
+$form-error-offset-y: 0px;
+$form-error-width: 32px;
+$form-error-height: 32px;
+$form-error-total-width: 72px;
+$form-error-total-height: 72px;
+$form-error-image: 'sprites/form-icons.png';
+$form-error: (40px, 0px, -40px, 0px, 32px, 32px, 72px, 72px, 'sprites/form-icons.png', 'form-error', );
+$form-mandatory-name: 'form-mandatory';
+$form-mandatory-x: 0px;
+$form-mandatory-y: 0px;
+$form-mandatory-offset-x: 0px;
+$form-mandatory-offset-y: 0px;
+$form-mandatory-width: 40px;
+$form-mandatory-height: 40px;
+$form-mandatory-total-width: 72px;
+$form-mandatory-total-height: 72px;
+$form-mandatory-image: 'sprites/form-icons.png';
+$form-mandatory: (0px, 0px, 0px, 0px, 40px, 40px, 72px, 72px, 'sprites/form-icons.png', 'form-mandatory', );
+$form-success-name: 'form-success';
+$form-success-x: 0px;
+$form-success-y: 40px;
+$form-success-offset-x: 0px;
+$form-success-offset-y: -40px;
+$form-success-width: 32px;
+$form-success-height: 32px;
+$form-success-total-width: 72px;
+$form-success-total-height: 72px;
+$form-success-image: 'sprites/form-icons.png';
+$form-success: (0px, 40px, 0px, -40px, 32px, 32px, 72px, 72px, 'sprites/form-icons.png', 'form-success', );
+$spritesheet-width: 72px;
+$spritesheet-height: 72px;
+$spritesheet-image: 'sprites/form-icons.png';
+$spritesheet-sprites: ($form-error, $form-mandatory, $form-success, );
+$spritesheet: (72px, 72px, 'sprites/form-icons.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-form-error {
+  background-image: image-url('sprites/form-icons.png');
+  background-position: -40px 0px;
+  width: 32px;
+  height: 32px;
+}
+.icon-form-mandatory {
+  background-image: image-url('sprites/form-icons.png');
+  background-position: 0px 0px;
+  width: 40px;
+  height: 40px;
+}
+.icon-form-success {
+  background-image: image-url('sprites/form-icons.png');
+  background-position: 0px -40px;
+  width: 32px;
+  height: 32px;
+}
