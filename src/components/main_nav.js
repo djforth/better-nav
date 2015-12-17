@@ -77,7 +77,7 @@ class MainNav extends React.Component {
 
 
   _setSecondary(id){
-    console.log(NavItemsStore.getSubs(id))
+
     this.setState({
       activeRoot:NavItemsStore.getItem(id)
     , secondary:NavItemsStore.getSubs(id)
