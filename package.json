@@ -1,6 +1,6 @@
 {
   "name": "better-nav",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "nav for Better website (Not better nav)",
   "main": "index.js",
   "babel": {
@@ -121,6 +121,7 @@
   },
   "dependencies": {
     "ajax-es6-module": "git://github.com/djforth/ajax-es6-module.git",
+    "better-nav":"git://github.com/djforth/better-nav.git",
     "classnames": "^2.2.1",
     "datamanager": "git://github.com/djforth/datamanager.git",
     "morse-react-mixins": "git://github.com/djforth/morse-react-mixins.git",
