@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/utils/ajax_manager.js"],"names":[],"mappings":";;AAAC,IAAM,IAAI,GAAI,OAAO,CAAC,iBAAiB,CAAC;IAClC,CAAC,GAAO,OAAO,CAAC,QAAQ,CAAC,CAAC;;AAEjC,IAAM,WAAW,GAAG,IAAI,IAAI,EAAE,CAAC","file":"ajax_manager.js","sourcesContent":[" const Ajax  = require(\"ajax-es6-module\")\n    ,  _     = require(\"lodash\");\n\nconst ajaxManager = new Ajax();"]}

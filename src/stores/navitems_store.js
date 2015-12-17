@@ -3,7 +3,6 @@ const assign      = require("react/lib/Object.assign")
   , _             = require("lodash");
 
 const Ajax        = require("ajax-es6-module");
-const ajaxManager = new Ajax();
 
 const navItemsFcty = require("../factory/navitems_fcty")
 
@@ -16,12 +15,24 @@ let navitems;
 let fetched     = false;
 let requestMade = false;
 
+function get_data(api, progress){
+  const ajaxManager = new Ajax(api);
+  // ajaxManager.addUrl(api);
 
+  return ajaxManager.fetch(progress)
+    .then((data)=>{
+      return data;
+    })
+    .catch((err)=>{
+    throw new Error(err);
+  });
+}
 
 const store = {
-
+  api:""
+  , progress:null
   // <<<<<<<<<<<<<<<< Event management >>>>>>>>>>
-  emitChange(event) {
+  , emitChange(event) {
     this.emit(event);
   }
 
@@ -36,6 +47,14 @@ const store = {
   , _addItems(data){
     // console.log(data)
     navitems = navItemsFcty(data)
+  }
+
+  , _fetchData(){
+    get_data(this.api, this.progress).then((data)=>{
+      fetched  = true;
+      navitems = navItemsFcty(data);
+      this.emitChange("fetched");
+    })
   }
 
   , _getLevels(){
@@ -55,6 +74,7 @@ const store = {
   }
 
   , _isActive(id){
+    console.log('id', navitems.findItem(id));
     return navitems.findItem(id).active;
   }
 
@@ -71,12 +91,16 @@ const store = {
     })
   }
 
+  , _progress(prog){
+    this.progress = prog;
+  }
+
   , _setActive(id){
     navitems.setActive(id);
   }
 
   , _setApi(api){
-    // ajaxManager = AjaxManager(api);
+    this.api = api;
   }
 }
 
@@ -88,7 +112,7 @@ const registeredCallback = function(payload) {
   switch(action.type) {
     case "FETCH_DATA":
       if(action.progress) NavitemsStore._progress(action.progress)
-      NavitemsStore._fetchData(action.date);
+      NavitemsStore._fetchData();
       NavitemsStore.emitChange("fetching");
       break;
 

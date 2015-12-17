@@ -84,6 +84,7 @@ module.exports = function(data){
       findItem:(id)=>findNavItem(navitems, id)
     , getSub:(id)=>{
       let item = findNavItem(navitems, id);
+      console.log("sub", item)
       if(item && _.has(item, "sub")) return item.sub;
     }
     , setActive:(id)=>{

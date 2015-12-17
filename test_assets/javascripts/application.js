@@ -4,13 +4,13 @@ const _        = require("lodash")
 
 const data = require("../../spec/data/navitems");
 
-var navitems = data(4)
+var navitems = data(1)
 console.log(navitems)
 
 const MainNav = require("../../src/components/main_nav");
 
 ReactDom.render(
-  <MainNav navitems={navitems} />,
+  <MainNav navitems={navitems} navitemsApi="/api/navitems.json" />,
   document.getElementById('primary-nav')
 );
 

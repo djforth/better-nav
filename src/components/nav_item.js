@@ -3,10 +3,10 @@ const React = require("react")
     , _     = require("lodash");
 
 
-const checker = require("../utils/checker");
+// const checker = require("../utils/checker");
 
 let mixins = require("morse-react-mixins");
-const [cssMixins, textMixins, widthsMixins]  = [mixins.css_mixins, mixins.text_mixins, mixins.widths_mixins];
+const [cssMixins, textMixins, widthsMixins, checker]  = [mixins.css_mixins, mixins.text_mixins, mixins.widths_mixins, mixins.checker];
 
 //Flux
 const NavItemsActions = require("../actions/navitems_actions")
@@ -35,12 +35,15 @@ class NavItem extends React.Component {
 
   //Non-standard
   _changeActive(){
-    let active = NavItemsStore._isActive(this.props.item.id)
-    // console.log("test" , checker.isMounted(this))
-    if(active !== this.list[0].active && checker.isMounted(this)){
-      this.list = [{active:active}];
-      this.setState({listcss:this.getClasses(this.list)})
+    if(checker.isMounted(this)){
+      let active = NavItemsStore._isActive(this.props.item.id)
+      // console.log("test" , checker.isMounted(this))
+      if(active !== this.list[0].active && checker.isMounted(this)){
+        this.list = [{active:active}];
+        this.setState({listcss:this.getClasses(this.list)})
+      }
     }
+
   }
 
   _onClick(e){

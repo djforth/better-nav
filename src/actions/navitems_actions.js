@@ -2,7 +2,7 @@
 
  module.exports = {
   fetchData:(progress)=>{
-    SessionsDispatcher.fetchData({
+    NavitemsDispatcher.fetchData({
       type: "FETCH_DATA",
       progress:progress
     });
@@ -23,7 +23,7 @@
   }
 
   , setApi:(url)=>{
-    SessionsDispatcher.setApi({
+    NavitemsDispatcher.setApi({
       type : "SET_API",
       url  : url
     });

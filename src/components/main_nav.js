@@ -1,6 +1,6 @@
 //Libraries
 const React    = require("react")
-    , ReactDom = require('react-dom')
+    , ReactDOM = require('react-dom')
     , _        = require("lodash");
 
 // Morse Libraies
@@ -33,8 +33,51 @@ class MainNav extends React.Component {
     };
   }
 
-  _setSecondary(id){
+  //Lifecycle
+  componentDidMount(){
+    this.detect = new ViewportDetect();
+    this.device = this.detect.getDevice();
+    this.id = this.detect.trackSize(this._onDeviceChange.bind(this));
+    NavItemsStore.addChangeListener("api_set", this._fetchData.bind(this));
+    NavItemsStore.addChangeListener("fetched", this._getNavItems.bind(this));
+    NavItemsActions.setApi(this.props.navitemsApi);
+  }
 
+  componentWillUnmount() {
+    this.detect.removeCallback(this.id);
+    NavItemsStore.removeChangeListener("fetched", this._getNavItems);
+    NavItemsStore.removeChangeListener("api_set", this._fetchData);
+  }
+
+  // event handlers
+  _onDeviceChange(device, size){
+      if(this.device !== device){
+        this.device = device;
+      }
+
+      this.size   = size;
+  }
+
+  _fetchData(){
+
+    NavItemsStore.removeChangeListener("api_set", this._fetchData);
+    _.defer(()=>{
+      NavItemsActions.fetchData()
+    });
+  }
+
+  _getNavItems(){
+    this.setState({
+      roots:NavItemsStore._getRoots()
+    , secondary:[]
+    , tertiary:[]
+    , quaternary:[]
+    });
+  }
+
+
+  _setSecondary(id){
+    console.log(NavItemsStore.getSubs(id))
     this.setState({
       activeRoot:NavItemsStore.getItem(id)
     , secondary:NavItemsStore.getSubs(id)
@@ -61,7 +104,7 @@ class MainNav extends React.Component {
   _renderLinks(items, cb){
     if(checker.checkArray(items)){
       return _.map(items, (ri)=>{
-        return (<Navitem key={ri.id} item={ri} mouseEnter={cb} />);
+        return (<Navitem key={ri.id} ref={ri.id} item={ri} mouseEnter={cb} />);
       })
     }
 
@@ -74,7 +117,6 @@ class MainNav extends React.Component {
       if(NavItemsStore._getLevels() === 1){
         return(
           <div className="nav-list level-1">
-            <div className="home-link"><a href={root.path}>In {root.title}</a></div>
             {this._renderTitle(root, "home-link")}
             <TouchNav
               ref      = "touch-nav"
@@ -136,6 +178,7 @@ class MainNav extends React.Component {
   }
 
   render(){
+    console.log("rendering")
     return (
       <div>
         <div className="nav-holder">
