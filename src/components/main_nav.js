@@ -68,10 +68,10 @@ class MainNav extends React.Component {
 
   render(){
     if(this.state.device === "mobile"){
-      return (<Mobile device={this.state.device} />)
+      return (<Mobile ref="mobile" device={this.state.device} />)
     }
 
-    return (<Desktop device={this.state.device} />)
+    return (<Desktop ref="desktop" device={this.state.device} />)
 
 
   }

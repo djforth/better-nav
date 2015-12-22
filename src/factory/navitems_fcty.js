@@ -35,6 +35,7 @@ function checkLevels(navitem){
 
 function findNavItem(navitems, id, item){
   if(item) return item;
+  if(_.isEmpty(navitems)) return null;
   return _.reduce(navitems, (prev, curr)=>{
     if(curr.id === id){
       return curr;
@@ -49,6 +50,7 @@ function findNavItem(navitems, id, item){
 }
 
 function processItems(data, level=0){
+  if(!data) return null;
   return _.map(data, (ni)=>{
     ni        = add_id(ni);
     ni.level  = level;
@@ -91,7 +93,6 @@ module.exports = function(data){
     return ni;
   });
 
-  console.log("processed", navitems)
 
   let obj = {
       findItem:(id)=>findNavItem(navitems, id)
