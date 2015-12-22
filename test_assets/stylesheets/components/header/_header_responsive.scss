@@ -2,10 +2,23 @@
   header {
     &.main {
       .logo {
-        width: 30%;
+        width: 20%;
+      }
+    }
+
+    .top-nav{
+      li a{
+        text-transform: uppercase;
+        font-size: 1.563em;
+
+        span{
+          @include hidden();
+        }
       }
     }
   }
+
+
 }
 
 @include breakpoint($mobile-and-tablet-breakpoint) {

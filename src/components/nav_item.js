@@ -3,8 +3,6 @@ const React = require("react")
     , _     = require("lodash");
 
 
-// const checker = require("../utils/checker");
-
 let mixins = require("morse-react-mixins");
 const [cssMixins, textMixins, widthsMixins, checker]  = [mixins.css_mixins, mixins.text_mixins, mixins.widths_mixins, mixins.checker];
 
@@ -43,28 +41,43 @@ class NavItem extends React.Component {
         this.setState({listcss:this.getClasses(this.list)})
       }
     }
+  }
+
+  _change(){
+    if(checker.isMounted(this)){
+      this.list = [{active:true}];
+      this.setState({listcss:this.getClasses(this.list)});
+      NavItemsActions.setActive(this.props.item.id)
+    }
 
   }
 
   _onClick(e){
-    e.preventDefault();
+    console.log("clicked", this.props.item.id)
+    if(this.props.device === "mobile"){
+      e.preventDefault();
+      this._change()
+      if(_.isFunction(this.props.onClick)){
+        this.props.onClick(this.props.item.id);
+      }
+    }
   }
 
   _onMouseEnter(){
-    this.list = [{active:true}];
-    this.setState({listcss:this.getClasses(this.list)});
-    NavItemsActions.setActive(this.props.item.id)
-    if(_.isFunction(this.props.mouseEnter)){
-      this.props.mouseEnter(this.props.item.id);
+    if(this.props.device !== "mobile"){
+      this._change()
+      if(_.isFunction(this.props.mouseEnter)){
+        this.props.mouseEnter(this.props.item.id);
+      }
     }
   }
 
   _renderLink(){
     let item = this.props.item;
     if(checker.checkOject(item, ["sub"])){
-      return(<a href="#" onMouseEnter={this._onMouseEnter.bind(this)}>{item.title}</a>)
+      return(<a href="#" onMouseEnter={this._onMouseEnter.bind(this)} onClick={this._onClick.bind(this)} className="has-subs">{item.title}</a>)
     } else if(this.props.item){
-      return(<a href={item.href}>{item.title}</a>)
+      return(<a href={item.path}>{item.title}</a>)
     }
 
     return "";

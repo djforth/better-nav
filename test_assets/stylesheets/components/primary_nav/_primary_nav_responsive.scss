@@ -1,5 +1,127 @@
 @include breakpoint($mobile-breakpoint) {
+  .open-nav{
+    position: absolute;
+    top:0;
+    left:24%;
 
+    width:50px;
+    display: table-cell;
+    height:100%;
+
+    //Styles
+    border-left:1px solid $top-nav-border;
+    border-right:1px solid $top-nav-border;
+
+    .icon-hamburger{
+      //Layout
+      width:50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin:0 auto;
+      display: block;
+
+      //Styles
+      background:url("data:image/svg+xml;utf8,<svg id='Layer_1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 26'><style>.st0,.st1{display:none}.st1{stroke:#999;stroke-width:.1}.st1,.st2{fill:none;stroke-miterlimit:10}.st2{stroke:#FFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}</style><g id='grid'><path class='st0' d='M23-15.9c16.5 0 29.9 13.4 29.9 29.9S39.5 43.9 23 43.9-6.9 30.5-6.9 14 6.5-15.9 23-15.9m0-.1C6.4-16-7-2.6-7 14S6.4 44 23 44s30-13.4 30-30-13.4-30-30-30z'/><path class='st0' d='M23 4.1c5.5 0 9.9 4.4 9.9 9.9s-4.4 9.9-9.9 9.9-9.9-4.4-9.9-9.9 4.4-9.9 9.9-9.9m0-.1c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10S28.5 4 23 4z'/><path class='st0' d='M23-5.9C34-5.9 42.9 3 42.9 14S34 33.9 23 33.9 3.1 25 3.1 14 12-5.9 23-5.9m0-.1C12-6 3 3 3 14s9 20 20 20 20-9 20-20S34-6 23-6z'/><path class='st0' d='M53-16v60H-7v-60h60m0 0H-7v60h60v-60z'/><path class='st1' d='M-2-11l50 50m0-50L-2 39'/></g><path class='st2' d='M1 14h44M1 2h44M1 26h44' id='icons'/></svg>") center center no-repeat;
+    }
+
+
+    &:hover{
+      background-color: $top-nav-hover;
+    }
+  }
+
+  .nav-list{
+    //layout
+    position: absolute;
+    top:100%;
+    left:0;
+    width:100%;
+
+    //styling
+    background-color: $mobile-nav-bg;
+
+    li{
+
+      a{
+        display: block;
+        padding:20px;
+        width: calc(100% - 40px);
+
+        //Styling
+        text-decoration: none;
+        font-size: 1.875em;
+        color:$mobile-nav-txt;
+        border-bottom: 1px solid $mobile-nav-brdr;
+
+        &:hover{
+          background:$mobile-nav-hover-bg;
+          color:$mobile-nav-hover-txt;
+        }
+
+        &.has-subs{
+          position: relative;
+
+          &:after{
+            content:"";
+            position: absolute;
+            width:15px;
+            height:15px;
+            top: 0;
+            bottom: 0;
+            right:30px;
+            display: block;
+            margin: auto;
+
+            background:url("data:image/svg+xml;utf8,<svg id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-281 404.9 6.6 8.9\"><style>.st0{fill:none;stroke:#55a440;stroke-width:2;stroke-miterlimit:10}</style><path class=\"st0\" d=\"M-280 405.9l4 3.5-4 3.5\"/></svg>") center center no-repeat;
+          }
+
+          &:hover{
+            &:after{
+              background:url("data:image/svg+xml;utf8,<svg id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-281 404.9 6.6 8.9\"><style>.st0{fill:none;stroke:#ffffff;stroke-width:2;stroke-miterlimit:10}</style><path class=\"st0\" d=\"M-280 405.9l4 3.5-4 3.5\"/></svg>") center center no-repeat;
+            }
+          }
+        }
+
+      }
+
+      &.current-section{
+        a{
+          text-transform: uppercase;
+          color: $mobile-nav-current-txt;
+
+
+          &:hover{
+            color:$mobile-nav-hover-txt;
+          }
+        }
+      }
+
+      &.previous-section{
+        a{
+
+          color: $mobile-nav-previous-txt;
+          background:$mobile-nav-previous-bg;
+
+          &:before {
+            content:"";
+            display: inline-block;
+            width:15px;
+            height: 15px;
+            transform: rotate(180deg);
+            margin:auto 8px auto 0;
+            background:url("data:image/svg+xml;utf8,<svg id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"-281 404.9 6.6 8.9\"><style>.st0{fill:none;stroke:#fff;stroke-width:2;stroke-miterlimit:10}</style><path class=\"st0\" d=\"M-280 405.9l4 3.5-4 3.5\"/></svg>") center center no-repeat;
+          }
+
+          &:hover{
+            color:$mobile-nav-hover-txt;
+          }
+        }
+      }
+    }
+  }
 }
 
 @include breakpoint($mobile-and-tablet-breakpoint) {
@@ -302,12 +424,17 @@
             text-decoration: none;
             color:$desktop-nav-l2-txt;
 
-            &:hover {
-              //style
-              background-color: $desktop-nav-l3-hover-bg;
-              color:$desktop-nav-l3-hover-txt;
-            }
+
           }
+
+          &.active, &:hover {
+              a{
+                //style
+                background-color: $desktop-nav-l3-hover-bg;
+                color:$desktop-nav-l3-hover-txt;
+              }
+
+            }
         }
       }
     }

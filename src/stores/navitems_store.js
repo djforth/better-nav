@@ -74,7 +74,6 @@ const store = {
   }
 
   , _isActive(id){
-    console.log('id', navitems.findItem(id));
     return navitems.findItem(id).active;
   }
 

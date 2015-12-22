@@ -66,6 +66,16 @@ $trinidad: #e14e00;
 $white: #fff;
 $black: #000;
 
+
+// New
+//Greens
+$chalet_green:#3B722D;
+$apple2: #4D9A38;
+
+//Greys
+$silver_chalice:#B0B0B0;
+$storm_dust:#686967;
+
 /* ---------- Global ---------- */
 $body-link: $trinidad !default;
 $primary-body-text: $scorpion !default;
@@ -203,6 +213,20 @@ $desktop-nav-l3-hover-bg: $apple !default;
 $desktop-nav-list: $wild-sand !default;
 $desktop-nav-list-brdr: $silver !default;
 $desktop-nav-l2-home-brdr-sh:  0 0 0 1px rgba(255, 255, 255, 0.76) !default;
+
+$mobile-nav-bg: $alto !default;
+$mobile-nav-txt: $tundora !default;
+$mobile-nav-brdr: $silver_chalice !default;
+$mobile-nav-hover-bg: $apple !default;
+$mobile-nav-hover-txt: $white !default;
+$mobile-nav-current-txt: $apple !default;
+$mobile-nav-previous-txt: $white !default;
+$mobile-nav-previous-bg: $storm_dust !default;
+
+//Top Nav
+$top-nav-txt:$white !default;
+$top-nav-border: $chalet_green !default;
+$top-nav-hover: $apple2 !default;
 
 //Not needed for primary nav but used elsewhere - Ian we should probably rename them...
 $primary-nav-bg: $scorpion !default;

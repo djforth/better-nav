@@ -15,10 +15,11 @@
     });
   }
 
-  , setActive:(id)=>{
+  , setActive:(id, level)=>{
     NavitemsDispatcher.setActive({
       type : "SET_ACTIVE",
-      id   : id
+      id   : id,
+      level: level
     });
   }
 

@@ -6,19 +6,30 @@ function add_id(item){
   return item
 }
 
-function checkLevels(navitem){
-  if(!_.has(navitem, "sub")) return navitem.level;
-
-  let level = _.reduce(navitem.sub, (prev, current)=>{
-    let level = (_.isNumber(prev)) ? prev : prev.level;
-    let nw_level =  current.level
-
-    if(_.has(current, "sub")){
-       nw_level = checkLevels(current);
+function checkSubs(navitems){
+  let check = false;
+  _.forEach(navitems, (ni)=>{
+    if(_.has(ni, "sub")){
+       check = true;
+       return false;
     }
-    return (level <= nw_level) ? nw_level : level;
-
   });
+
+  return check;
+}
+
+function checkLevels(navitem){
+
+  if(!_.has(navitem, "sub")) return navitem.level;
+  let level = 1;
+  let check = false;
+  _.forEach(navitem.sub, (ni)=>{
+    if(_.has(ni, "sub") && checkSubs(ni.sub)){
+      level = 2;
+      return false;
+    }
+  });
+
   return level
 }
 
@@ -80,11 +91,13 @@ module.exports = function(data){
     return ni;
   });
 
+  console.log("processed", navitems)
+
   let obj = {
       findItem:(id)=>findNavItem(navitems, id)
     , getSub:(id)=>{
       let item = findNavItem(navitems, id);
-      console.log("sub", item)
+      // console.log("sub", item)
       if(item && _.has(item, "sub")) return item.sub;
     }
     , setActive:(id)=>{

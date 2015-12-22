@@ -1,3 +1,5 @@
+require("babel-polyfill");
+
 const _        = require("lodash")
     , React    = require("react")
     , ReactDom = require('react-dom');
@@ -10,7 +12,7 @@ console.log(navitems)
 const MainNav = require("../../src/components/main_nav");
 
 ReactDom.render(
-  <MainNav navitems={navitems} navitemsApi="/api/navitems.json" />,
+  <MainNav navitemsApi="/api/navitems.json" />,
   document.getElementById('primary-nav')
 );
 

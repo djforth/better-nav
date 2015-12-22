@@ -12,10 +12,9 @@ module.exports = {
     if(!check || _.isEmpty(keys)) return check;
 
     return _.reduce(keys, (prev, curr)=>{
-      let ch = (_.isBoolean(prev)) ? prev : _.has(obj, prev);
-      if(!_.has(obj, curr)) ch = false;
-      return ch
-    })
+      if(prev) return prev
+      return _.has(obj, curr)
+    }, false);
   }
 
   , isMounted:(component)=>{
