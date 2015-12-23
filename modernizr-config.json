@@ -41,11 +41,12 @@
     "test/storage/localstorage",
     "test/storage/sessionstorage",
     "test/storage/websqldatabase",
-    "test/svg/asimg",
+    "test/svg/clippaths",
     "test/svg/filters",
     "test/svg/foreignobject",
     "test/svg/inline",
     "test/svg/smil",
+    "test/url/data-uri",
     "test/workers/webworkers"
   ]
 }

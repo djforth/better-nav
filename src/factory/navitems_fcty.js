@@ -24,12 +24,12 @@ function checkLevels(navitem){
   let level = 1;
   let check = false;
   _.forEach(navitem.sub, (ni)=>{
-    if(_.has(ni, "sub") && checkSubs(ni.sub)){
+    if(_.has(ni, "sub")){
       level = 2;
       return false;
     }
   });
-
+  // console.log(navitem.title, level)
   return level
 }
 

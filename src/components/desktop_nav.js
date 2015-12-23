@@ -20,6 +20,7 @@ const Navitem = require("./nav_item")
 class DesktopNav extends React.Component {
   constructor(props) {
     super(props);
+    this.clearNav;
     this.state = {
       device:"mobile"
     , roots:[]
@@ -149,10 +150,22 @@ class DesktopNav extends React.Component {
     });
   }
 
+  _closeNav(e){
+    this.clearNav = window.setTimeout(()=>{
+      // console.log("mouse out")
+      NavItemsActions.setActive(null)
+      this._getNavItems();
+    }, 500);
+  }
+
+  _leaveOpen(e){
+    // console.log('mouse enter');
+    clearTimeout(this.clearNav);
+  }
 
   render(){
     return (
-      <div className="desktopNav">
+      <div className="desktopNav" onMouseLeave={this._closeNav.bind(this)} onMouseEnter={this._leaveOpen.bind(this)}>
         <div className="nav-holder">
           <ul className="nav-list primary-nav-list">
             {this._renderLinks(this.state.roots, this._setSecondary.bind(this))}

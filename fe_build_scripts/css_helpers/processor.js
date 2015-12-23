@@ -101,6 +101,7 @@ var Processor = {
     var src = this.real_path(fp, 'images');
 
     mime_type = mime_type || mime.lookup(src);
+    console.log(mime_type)
     fs.readFile(src, function(err, data){
       if(err) {
         console.error(err)

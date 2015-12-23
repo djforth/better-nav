@@ -53,7 +53,6 @@ class NavItem extends React.Component {
   }
 
   _onClick(e){
-    console.log("clicked", this.props.item.id)
     if(this.props.device === "mobile"){
       e.preventDefault();
       this._change()

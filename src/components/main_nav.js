@@ -49,7 +49,7 @@ class MainNav extends React.Component {
 
   // event handlers
   _onDeviceChange(device, size){
-    console.log(device, this.state.device !== device)
+
     if(this.state.device !== device){
       this.device = device;
       this.setState({device:this.device})
