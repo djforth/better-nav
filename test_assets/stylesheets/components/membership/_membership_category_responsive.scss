@@ -1,0 +1,23 @@
+article {
+  &.membership-category {
+    @include breakpoint($mobile-breakpoint) {
+      @include span(4 of 4 last);
+    }
+
+    @include breakpoint($tablet-breakpoint) {
+      @include span(5 of 10);
+
+      &:nth-child(2n+2) {
+        @include last;
+      }
+    }
+
+    @include breakpoint($desktop-breakpoint) {
+      @include span(4 of 12);
+
+      &:nth-child(3n+3) {
+        @include last;
+      }
+    }
+  }
+}

@@ -4,10 +4,12 @@
       padding-bottom: 75%; /* 4:3 ratio, ie 480x360 */
       // padding-bottom: 35.714285714286%; /* 14:5 ratio, ie 1680x600 */
     }
-  }
 
-  @include breakpoint($mobile-and-tablet-breakpoint) {
-    
+    .carousel-overlay {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
   }
 
   @include breakpoint($tablet-breakpoint) {
@@ -17,9 +19,17 @@
     }
   }
 
+  @include breakpoint($tablet-and-desktop-breakpoint) {
+    .carousel-overlay {
+      padding: 5% 0 0 13%;
+    }
+  }
+
   @include breakpoint($desktop-breakpoint) {
     .carousel-inner {
-      padding-bottom: 46.875%; /* 32:15 ratio, ie 1280x600 */
+      // padding-bottom: 46.875%; /* 32:15 ratio, ie 1280x600. This is GLL's ratio, as per discussions with Matthew */
+      padding-bottom: 30.546875%; /* , ie 1280x391. This is Oliver's ratio, as per their design */
+      /* A decision needs to be made regarding the above. As it stands, Oliver are unhappy if we use GLL's ratios as it doesn't match their design and GLL are unhappy if we use Oliver's ratios because the image isn't high enough. */
     }
   }
 }

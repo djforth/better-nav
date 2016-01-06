@@ -1,0 +1,35 @@
+form {
+  @include breakpoint($mobile-breakpoint) {
+    input[type="email"], input[type="tel"], input[type="text"], select, textarea {
+      // layout
+      padding: 20px;
+
+      // styling
+      border: 2px solid $form-input-border;
+      font-size: 1em; /* 16px */
+
+      &.required {
+        background: image_url("forms/form-mandatory.png") 100% 0 no-repeat;
+      }
+    }
+
+    label {
+      font-size: 1em; /* 16px */
+    }
+  }
+
+  @include breakpoint($tablet-and-desktop-breakpoint) {
+    input[type="email"], input[type="tel"], input[type="text"], select, textarea {
+      // layout
+      padding: 15px;
+
+      // styling
+      border: 1px solid $form-input-border;
+      font-size: 0.813em; /* 13px */
+    }
+
+    label {
+      font-size: 0.875em; /* 14px */
+    }
+  }
+}

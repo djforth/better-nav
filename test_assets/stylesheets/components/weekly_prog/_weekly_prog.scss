@@ -354,3 +354,66 @@
   // Calendar-bar finish
 }
 
+// Timetable nav start
+  .timetable-nav{
+    margin:10px 0 30px;
+    position: relative;
+    overflow:hidden;
+
+    .timetable-nav-holder{
+      position: relative;
+      float: left;
+      left:50%;
+      // width: 100%;
+
+
+      ul{
+        //layout
+        @include reset-normalize();
+        position: relative;
+        float: left;
+        left:-50%;
+
+
+        //Styling
+        border:1px solid $weekly-prog-nav-brdr;
+        border-radius: 10px;
+        // width: 100%;
+
+        li{
+          @include reset-normalize();
+          position: relative;
+          display: inline;
+
+
+          a{
+            // @include reset-normalize();
+            //Layout
+            display: block;
+            float:left;
+            margin: 5px;
+            padding:20px 30px;
+
+            //styling
+            text-decoration: none;
+            font-size: 1.154em;
+            border-radius: 8px;
+            color:$weekly-prog-nav-txt;
+
+            &:hover{
+              background-color: $weekly-prog-nav-hover;
+            }
+
+            &.active{
+              background-color: $weekly-prog-nav-active;
+              color: $weekly-prog-nav-active-txt;
+            }
+
+          }
+        }
+      }
+    }
+
+  }
+  // Timetable nav finish
+

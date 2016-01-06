@@ -5,10 +5,6 @@ form {
 
   input {
     @include reset-normalize-form-inputs;
-
-    &.required {
-      background: image_url("forms/form-mandatory.png") 100% 0 no-repeat;
-    }
   }
 
   input[type="checkbox"] {
@@ -21,15 +17,13 @@ form {
   input[type="email"], input[type="tel"], input[type="text"], textarea {
     // layout
     box-sizing: border-box;
-    padding: 20px;
     width: 100%;
     
     // styling
-    border: 2px solid $form-input-border;
+    background-color: $form-input-bg;
     border-radius: 5px;
     color: $form-input-text;
     font-family: "Lato", Arial, Verdana, sans-serif;
-    font-size: 1em; /* 16px */
     outline: none;
 
     &:focus {
@@ -40,16 +34,21 @@ form {
   input[type="submit"] {
     @extend .button;
     @extend .button-primary;
-    border: 0 none;
+
+    // layout
+    padding: 10px 30px !important;
+
+    // styling
+    border: 0 none !important;
   }
 
   label {
     // layout
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   
     // styling
-    color: $label;
+    color: $form-label;
     font-weight: bold;
   }
 
@@ -59,17 +58,23 @@ form {
     -moz-appearance: none;
     appearance: none;
 
-    // layout
-    padding: 20px;
-
     // styling
     background: image_url("forms/form-select-arrows.png") 90% 50% no-repeat $form-select-bg;
     border: 2px solid $form-select-border;
     outline: none;
   }
 
-  .field-with-errors {
-    input {
+  .error {
+    // layout
+    display: block;
+
+    // styling
+    color: $form-error-border;
+    font-size: 0.688em; /* 13px */
+  }
+
+  .field-with-errors, .field_with_errors {
+    input, select {
       background: image_url("forms/form-error.png") 99% 50% no-repeat;
       border: 2px solid $form-error-border;
     }

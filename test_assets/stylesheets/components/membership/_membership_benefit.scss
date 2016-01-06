@@ -1,0 +1,32 @@
+article {
+  &.membership-benefit {
+    // layout
+    box-sizing: border-box;
+    margin-bottom: 20px;
+
+    // styling
+    border: 1px solid $membership-benefit-border;
+    box-shadow: 0 0 10px 5px $membership-benefit-shadow;
+
+    h1 {
+      // reset
+      @include reset-normalize((
+        margin: 0 0 10px
+      )...);
+
+      // styling
+      color: $membership-benefit-heading-text;
+
+    }
+
+    .number {
+      // layout
+      display: block;
+  
+      // styling
+      color: $membership-benefit-number-text;
+      font-size: 4.813em; /* 77px */
+      font-weight: 300;
+    }
+  }
+}

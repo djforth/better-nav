@@ -1,0 +1,37 @@
+.tinymce {
+  a {
+    color: $tinymce-link-text;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    // reset
+    @include reset-normalize((
+      margin: 0 0 10px
+    )...);
+
+    // styling
+    font-family: "Garage Gothic", Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  li {
+    // reset
+    @include reset-normalize((
+      list-style: disc inside,
+      margin: 0 0 10px
+    )...);
+  }
+
+  ul {
+    // reset
+    @include reset-normalize((
+      list-style: disc inside
+    )...);
+  }
+}

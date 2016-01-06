@@ -1,0 +1,46 @@
+section {
+  &.centre-locator {
+    margin-top: 0;
+    overflow: hidden;
+    position: relative;
+
+    &:after {
+      // layout
+      content: "";
+      height: 10px;
+      margin: auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      width: 75%;
+      z-index: 1;
+
+      // styling
+      border-radius: 100px / 5px; 
+      box-shadow: 0 0 18px $tabbed-content-body-shadow;
+    }
+
+    form {
+      @include clearfix;
+    }
+
+    h1 {
+      // reset
+      @include reset-normalize((
+        margin: 0 0 50px
+      )...);
+
+      // styling
+      color: $lochmara;
+    }
+
+    select {
+      width: 100%;
+    }
+  }
+}
+
+.centre-locator-container {
+  background-color: $centre-locator-bg;
+}

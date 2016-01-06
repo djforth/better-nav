@@ -10,6 +10,25 @@
   text-transform: uppercase;
 }
 
+.button-carousel {
+  // layout
+  padding: 15px 30px;
+
+  // styling
+  background-color: $button-carousel-bg;
+  border: 1px solid $button-carousel-border;
+  color: $button-carousel-text !important;
+
+  &:hover {
+    background-color: $button-carousel-bg-hover;
+    box-shadow: 0 2px 5px 0 $button-carousel-shadow;
+  }
+}
+
+.button-carousel, .button-news, .button-primary, .button-secondary {
+  font-size: 1.5em; /* 24px */
+}
+
 .button-news {
   // layout
   padding: 15px 20px;
@@ -63,10 +82,6 @@
   }
 }
 
-.button-primary, .button-secondary {
-  font-size: 1.5em; /* 24px */
-}
-
 .button-secondary {
   // layout
   padding: 10px 20px;
@@ -78,7 +93,7 @@
 
   &:hover {
     background-color: $button-secondary-bg-hover;
-    color: $button-secondary-text-hover;
+    color: $button-secondary-text-hover !important;
   }
 }
 

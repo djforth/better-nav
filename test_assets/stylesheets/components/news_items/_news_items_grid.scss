@@ -9,50 +9,55 @@ section {
       background-color: white;
 
       &.news-item-image {
+        &.single {
+          h1 {
+            display: none;
+          }
+        }
+
         h1 {
+          // reset
+          @include reset-normalize;
+
           // layout
           position: absolute;
           bottom: 20px;
           left: 20px;
-          right: 20px;
+          right: 75px;
           z-index: 1;
   
           // styling
           color: $news-item-image-heading-text;
         }
-
-        .text-content {
-          position: relative;
-        }
       }
 
-      &.news-item-image-text {
-        background-color: $news-item-image-text-bg;
+      // &.news-item-image-text {
+      //   background-color: $news-item-image-text-bg;
 
-        h1 {
-          color: $news-item-image-text-heading-text;
-        }
+      //   h1 {
+      //     color: $news-item-image-text-heading-text;
+      //   }
 
-        .text-content {
-          position: relative;
+      //   .text-container {
+      //     position: relative;
 
-          &:before {
-            // layout
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: -13px;
-            margin: auto;
+      //     &:before {
+      //       // layout
+      //       content: "";
+      //       position: absolute;
+      //       left: 0;
+      //       right: 0;
+      //       top: -13px;
+      //       margin: auto;
 
-            // styling
-            @include sprite($arrow-grey);
-          }
-        }
-      }
+      //       // styling
+      //       @include sprite($arrow-grey);
+      //     }
+      //   }
+      // }
 
       &.news-item-image-text, &.news-item-text {
-        .text-content {
+        .text-container {
           @include clearfix;
           padding: 20px;
         }
@@ -86,24 +91,9 @@ section {
         right: 2px;
         bottom: 2px;
       }
-
-      .image-container {
-        height: 0;
-        position: relative;
-        padding-bottom: 100%; /* News item images are always going to be square */
-
-        img {
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: auto;
-        }
-      }
     }
 
     .articles {
-      // layout
       padding: 20px 0;
     }  
   }

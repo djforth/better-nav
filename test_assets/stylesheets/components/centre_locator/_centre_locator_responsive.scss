@@ -1,0 +1,37 @@
+section {
+  &.centre-locator {
+    @include breakpoint($mobile-breakpoint) {
+      .form-row {
+        @include span(4 of 4 last);
+      }
+    }
+
+    @include breakpoint($tablet-breakpoint) {
+      .form-row {
+        @include span(2.8 of 10);
+      }
+    }
+
+    @include breakpoint($tablet-and-desktop-breakpoint) {
+      form {
+        position: relative;
+      }
+  
+      input[type="submit"] {
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+      }
+    }
+
+    @include breakpoint($desktop-breakpoint) {
+      .content-padding {
+        padding: 20px 60px;
+      }
+
+      .form-row {
+        @include span(3.5 of 12);
+      }
+    }
+  }
+}

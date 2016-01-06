@@ -26,6 +26,8 @@
 
     .nav-items{
       @include reset-normalize;
+      height:auto;
+      // overflow: hidden;
       position: absolute;
       left:0;
       height:50px;

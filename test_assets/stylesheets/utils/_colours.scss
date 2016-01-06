@@ -12,9 +12,11 @@ $lochmara: #008bd0;
 
 // Greens
 $apple: #55a440;
+$apple2: #4D9A38;
 $apple-t-043: rgba(85, 164, 44, 0.43);
 $celery: #9dcd53;
 $celery-2: #a6d263;
+$chalet_green:#3B722D;
 $conifer: #98cf50;
 $fern: #65ad52;
 $mantis: #79b84f;
@@ -28,6 +30,8 @@ $alto: #dbdbdb;
 $alto-2: #cfcfcf;
 $alto-3: #dedede;
 $alto-4: #d7d7d7;
+$alto-5: #CECECE;
+$athens-grey: #f3f3f7;
 $black-t-003: rgba(0, 0, 0, 0.03);
 $black-t-01: rgba(0, 0, 0, 0.1);
 $black-t-015: rgba(0, 0, 0, 0.15);
@@ -44,20 +48,28 @@ $gallery-2: #efefef;
 $gallery-3: #ededed;
 $mercury: #e7e7e7;
 $mercury-2:#e5e4e4;
-$mischka-t-06: rgba(233, 231, 234, 0.6);
 $mine-shaft: #2e2e2e;
 $mine-shaft-2: #383838;
+$mine-shaft-t: rgba(41, 41, 41, 0.5);
+$mischka: #e9e7ea;
+$mischka-t-06: rgba(233, 231, 234, 0.6);
 $nobel: #b6b6b6;
 $pale-slate: #b8b7b8;
 $scorpion: #585858;
+$scorpion-2: #565656;
 $scorpion-t-02: rgba(88, 88, 88, 0.2);
 $scorpion-t-03: rgba(88, 88, 88, 0.3);
 $scorpion-t-04: rgba(88, 88, 88, 0.4);
+$scorpion-t: rgba(88, 88, 88, 0.5);
 $silver: #c7c7c7;
 $silver-2: #b9b9b9;
+$silver_chalice:#B0B0B0;
 $silver-t-05: rgba(204, 204, 204, 0.5);
+$storm_dust:#686967;
 $tundora: #4a4a4a;
+$tundora-2: #4c4c4c;
 $wild-sand: #f6f6f6;
+
 
 // Other
 $christine: #f45b0b;
@@ -65,16 +77,6 @@ $thunderbird: #cc1517;
 $trinidad: #e14e00;
 $white: #fff;
 $black: #000;
-
-
-// New
-//Greens
-$chalet_green:#3B722D;
-$apple2: #4D9A38;
-
-//Greys
-$silver_chalice:#B0B0B0;
-$storm_dust:#686967;
 
 /* ---------- Global ---------- */
 $body-link: $trinidad !default;
@@ -87,12 +89,17 @@ $tertiary-heading-text: $white !default;
 
 // Forms
 $form-error-border: $thunderbird !default;
+$form-input-bg: $white !default;
 $form-input-border: $alto-4 !default;
 $form-input-text: $pale-slate !default;
 $form-input-text-focus: $scorpion !default;
+$form-label: $scorpion-2 !default;
 $form-select-bg: $white !default;
 $form-select-border: $alto-4 !default;
-$label: $tundora !default;
+
+// TinyMCE
+$tinymce-link-text: $scorpion !default;
+
 /* ---------- End Global ---------- */
 
 /* ---------- Components ---------- */
@@ -103,6 +110,11 @@ $breadcrumbs-link-text: $boulder-2 !default;
 $breadcrumbs-pretext-text: $mine-shaft-2 !default;
 
 // Buttons
+$button-carousel-bg: $apple !default;
+$button-carousel-bg-hover: lighten($apple, 5%) !default;
+$button-carousel-border: $apple !default;
+$button-carousel-shadow: $black-t-034 !default;
+$button-carousel-text: $white !default;
 $button-pagination-bg-1: $alto !default;
 $button-pagination-bg-2: $gallery-2 !default;
 $button-pagination-bg-hover: $christine !default;
@@ -124,8 +136,17 @@ $button-tertiary-text: $scorpion !default;
 
 // Carousel
 $carousel-arrow-bg: $white !default;
+$carousel-bg: $wild-sand !default;
+$carousel-border: $apple !default;
 $carousel-dot-active-bg: $scorpion !default;
 $carousel-dot-bg: $celery !default;
+$carousel-subtitle-bg: $white !default;
+$carousel-subtitle-text: $apple !default;
+$carousel-title-bg: $white !default;
+$carousel-title-text: $celery !default;
+
+// Centre locator
+$centre-locator-bg: $wild-sand !default;
 
 // Fake table
 $row-even: $gallery !default;
@@ -139,6 +160,11 @@ $map-legend-bg-2: $celery !default;
 $map-legend-border: $apple !default;
 $map-legend-link: $white !default;
 $map-legend-text: $white !default;
+
+// Maps
+$map-info-bg: linear-gradient(45deg, $apple 0%, $celery 100%) !default;
+$map-info-brdr: $apple !default;
+$map-info-txt: $white !default;
 
 // Footer
 $footer-bg: $alto-3 !default;
@@ -155,6 +181,33 @@ $footer-link-text: $scorpion !default;
 $header-bg: $apple !default;
 $header-bg-nav-open: lighten($apple, 10%) !default;
 $header-search-text: $white !default;
+
+// Membership benefit
+$membership-benefit-border: $apple-t-043 !default;
+$membership-benefit-heading-text: $scorpion !default;
+$membership-benefit-number-text: $apple !default;
+$membership-benefit-shadow: $black-t-01 !default;
+
+// Membership category
+$membership-category-bg: $alabaster !default;
+$membership-category-border: $apple-t-043 !default;
+$membership-category-header-bg-1: $white !default;
+$membership-category-header-bg-2: $black-t-003 !default;
+$membership-category-heading-text: $apple !default;
+$membership-category-shadow: $black-t-01 !default;
+
+// Membership preview
+$membership-preview-bg: $alabaster !default;
+$membership-preview-border: $apple-t-043 !default;
+$membership-preview-dt-text: $havelock-blue !default;
+$membership-preview-header-bg-1: $white !default;
+$membership-preview-header-bg-2: $black-t-003 !default;
+$membership-preview-heading-text: $apple !default;
+$membership-preview-pricing-bg-1: $apple !default;
+$membership-preview-pricing-bg-2: $celery !default;
+$membership-preview-pricing-text: $white !default;
+$membership-preview-pricing-shadow: $black-t-015 !default;
+$membership-preview-shadow: $black-t-01 !default;
 
 // News items
 $news-item-border: $sprout !default;
@@ -223,7 +276,7 @@ $mobile-nav-current-txt: $apple !default;
 $mobile-nav-previous-txt: $white !default;
 $mobile-nav-previous-bg: $storm_dust !default;
 
-//Top Nav
+// Top Nav
 $top-nav-txt:$white !default;
 $top-nav-border: $chalet_green !default;
 $top-nav-hover: $apple2 !default;
@@ -260,7 +313,7 @@ $venue-nav-text: $boulder !default;
 $venue-nav-text-active: $cod-grey !default;
 $venue-nav-text-border: $apple !default;
 
-//Weekly programme
+// Weekly programme
 $weekly-prog-nav-border: $alto-2 !default;
 $weekly-prog-nav-border-active: $apple !default;
 $weekly-prog-nav-text: $scorpion !default;
@@ -270,30 +323,72 @@ $weely-prog-pill-arvo:$mantis !default;
 $weely-prog-pill-evening:$apple !default;
 $weely-prog-old-session:$scorpion !default;
 $weely-prog-now-session:$havelock-blue !default;
+
 $calendar-btn-text:$white !default;
 $calendar-btn-bg:$apple !default;
 $calendar-bar-border:$apple !default;
 $calendar-bar-bg: $alto-3 !default;
 $calendar-print-border: $alto-2 !default;
+
+$weekly-prog-nav-brdr: $alto-5 !default;
+$weekly-prog-nav-active: $apple !default;
+$weekly-prog-nav-active-txt: $white !default;
+$weekly-prog-nav-hover: $alto-5 !default;
+$weekly-prog-nav-txt: $scorpion !default;
+
+
 /* ---------- End Components ---------- */
 
 /* ---------- Pages ---------- */
+// Centre locator
+$centre-locator-facility-bg: $alabaster !default;
+$centre-locator-facility-border: $apple-t-043 !default;
+$centre-locator-facility-header-bg-1: $white !default;
+$centre-locator-facility-header-bg-2: $black-t-003 !default;
+$centre-locator-facility-heading-text: $apple !default;
+$centre-locator-facility-shadow: $black-t-01 !default;
+$centre-locator-locations-az-bg: $wild-sand !default;
+$centre-locator-locations-link-text: $scorpion !default;
+$centre-locator-locations-list-bg: $wild-sand !default;
+$centre-locator-locations-list-border: $apple !default;
+$centre-locator-locations-list-header-heading-text: $apple !default;
+$centre-locator-nav-bg-1: $athens-grey !default;
+$centre-locator-nav-bg-1-active: $alabaster !default;
+$centre-locator-nav-bg-2: $mischka !default
+$centre-locator-nav-bg-2-active: transparent;
+$centre-locator-nav-border: $apple !default;
+$centre-locator-nav-shadow: $black-t-024 !default;
+$centre-locator-nav-text: $scorpion !default;
+$centre-locator-nav-text-active: $apple !default;
+
 // Dynamic pages
 $dynamic-panel-bold-text: $lochmara !default;
 $dynamic-panel-link-text: $trinidad !default;
 
+// Facilities and Activities
+$facility-activity-bg-1: $scorpion !default;
+$facility-activity-bg-2: $mine-shaft !default;
+$facility-activity-border: $apple-t-043 !default;
+$facility-activity-heading-text: $white !default;
+$facility-activity-shadow: $black-t-01 !default;
+
+// Fees
+$fee-bg: $wild-sand !default;
+$fee-border: $alto-4 !default;
+$fee-heading-text: $lochmara !default;
+$fee-shadow: $scorpion-t-03 !default;
+$fee-th-text: $lochmara !default;
+
+// Home
+$top-activity-facility-bg: $white !default;
+
+// Search
+$search-filter-border: $apple-t-043 !default;
+$search-filter-link-text: $scorpion !default;
+$search-filter-shadow: $black-t-01 !default;
+$search-result-link-text: $scorpion !default;
+
 // Venues memberships
-$membership-choose-bg: $alabaster !default;
-$membership-choose-border: $apple-t-043 !default;
-$membership-choose-dt-text: $havelock-blue !default;
-$membership-choose-header-bg-1: $white !default;
-$membership-choose-header-bg-2: $black-t-003 !default;
-$membership-choose-heading-text: $apple !default;
-$membership-choose-pricing-bg-1: $apple !default;
-$membership-choose-pricing-bg-2: $celery !default;
-$membership-choose-pricing-text: $white !default;
-$membership-choose-pricing-shadow: $black-t-015 !default;
-$membership-choose-shadow: $black-t-01 !default;
 $membership-short-term-bg: $alabaster !default;
 $membership-short-term-border: $apple-t-043 !default;
 $membership-short-term-header-bg-1: $white !default;
@@ -330,7 +425,4 @@ $venue-join-button-bg-hover: $scorpion-t-04 !default;
 $venue-join-button-text: $white !default;
 $venue-opening-hours-border: $alto !default;
 $venue-opening-hours-time: $havelock-blue !default;
-
-// Home
-$top-activity-facility-bg: $white !default;
 /* ---------- End Pages ---------- */

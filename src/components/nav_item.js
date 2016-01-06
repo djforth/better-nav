@@ -14,7 +14,8 @@ class NavItem extends React.Component {
   constructor(props) {
     super(props);
     this.mounted = false;
-    this.list    = [{active:false}]
+    let item = this.props.item;
+    this.list    = [{active:item.active}]
     this.state   = {listcss:this.getClasses(this.list)}
   }
 

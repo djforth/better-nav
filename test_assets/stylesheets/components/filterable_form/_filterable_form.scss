@@ -1,0 +1,14 @@
+.filterable-form {
+  .common, .filterable {
+    // layout
+    max-height: 0;
+    overflow: hidden;
+
+    // styling
+    @include transition(max-height 0.5s cubic-bezier(0.86, 0, 0.07, 1));
+
+    &.open {
+      max-height: 1000px;
+    }
+  }
+}

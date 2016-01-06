@@ -1,5 +1,5 @@
 const _     = require("lodash");
-
+const CheckActive = require("../utils/check_active");
 
 function add_id(item){
   item.id = _.uniqueId("navitem");
@@ -49,16 +49,15 @@ function findNavItem(navitems, id, item){
   }, item);
 }
 
-function processItems(data, level=0){
+function processItems(data, setActive, level=0){
   if(!data) return null;
   return _.map(data, (ni)=>{
     ni        = add_id(ni);
     ni.level  = level;
-    ni.active = false;
+    ni.active = setActive(ni.path);
     if(_.has(ni, "sub")){
-      ni.sub = processItems(ni.sub, level+1);
+      ni.sub = processItems(ni.sub, setActive, level+1);
     }
-
     return ni;
   });
 }
@@ -87,7 +86,10 @@ function setActive(data, id){
 }
 
 module.exports = function(data){
-  let navitems = processItems(data);
+  // isActive = CheckActive();
+  let navitems = processItems(data, CheckActive());
+
+
   navitems = _.map(navitems, (ni)=>{
     ni.fullLevels = checkLevels(ni);
     return ni;

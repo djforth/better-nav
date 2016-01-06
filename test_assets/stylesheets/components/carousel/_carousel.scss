@@ -1,6 +1,44 @@
 #carousel {
+  // layout
   overflow: hidden;
   position: relative;
+
+  // styling
+  background-color: $carousel-bg;
+  border-top: 3px solid $carousel-border;
+
+  h2 {
+    // reset
+    @include reset-normalize((
+      padding: 15px 15px 2px
+    )...);
+
+    // styling
+    background: $carousel-title-bg;
+    color: $carousel-title-text;
+  }
+
+  h2, h3 {
+    clear: both;
+    float: left;
+  }
+
+  h3 {
+    // reset
+    @include reset-normalize((
+      padding: 2px 15px 15px
+    )...);
+
+    // styling
+    background: $carousel-subtitle-bg;
+    color: $carousel-subtitle-text;
+  }
+
+  .button {
+    clear: both;
+    float: left;
+    margin-top: 40px;
+  }
 
   .carousel-arrows-container {
     // reset
@@ -135,13 +173,12 @@
     // styling
     background-size: cover;
 
-    &.hidden {
-      display: none;
-    }
-
-
     &.animating {
       @include transition(left 0.6s cubic-bezier(0.86, 0, 0.07, 1));
+    }
+
+    &.hidden {
+      display: none;
     }
   }
 }

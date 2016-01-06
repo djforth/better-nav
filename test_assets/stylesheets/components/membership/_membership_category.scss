@@ -1,0 +1,25 @@
+article {
+  &.membership-category {
+    // layout
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    text-align: center;
+
+    // styling
+    background-color: $membership-category-bg;
+    border: 1px solid $membership-category-border;
+    box-shadow: 0 0 10px 5px $membership-category-shadow;
+
+    h1 {
+      // reset
+      @include reset-normalize;
+
+      // styling
+      color: $membership-category-heading-text;
+    }
+
+    header {
+      @include linear-gradient(top, $membership-category-header-bg-1, $membership-category-header-bg-2);
+    }
+  }
+}

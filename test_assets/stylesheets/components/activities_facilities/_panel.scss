@@ -1,0 +1,46 @@
+article {
+  &.activity-facility {
+    // layout
+    box-sizing: border-box;
+    margin-bottom: 20px;
+
+    // styling
+    border: 1px solid $facility-activity-border;
+    box-shadow: 0 0 10px 5px $facility-activity-shadow;
+
+    h1 {
+      // reset
+      @include reset-normalize;
+
+      // styling
+      color: $facility-activity-heading-text;
+    }
+
+    img {
+      opacity: 0.9;
+    }
+
+    .background-container {
+      // layout
+      padding: 20px;
+
+      // styling
+      @include linear-gradient(80deg, $venue-join-day-pass-bg 0%, $venue-join-day-pass-bg 69%, $venue-join-day-pass-reflection 69%);
+    }
+
+    .image-container {
+      // layout
+      position: relative;
+
+      // styling
+      @include linear-gradient(top, $facility-activity-bg-1, $facility-activity-bg-2);
+
+      h1 {
+        // layout
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+      }
+    }
+  }
+}

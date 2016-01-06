@@ -40,23 +40,11 @@ footer {
       }
 
       &.sign-up {
+        @include clearfix;
         margin-bottom: 40px;
 
         h1 {
           display: block;
-        }
-
-        input[type="submit"] {
-          float: right;
-          margin-left: 20px;
-        }
-
-        label {
-          display: none;
-        }
-
-        .form-row {
-          overflow: hidden;
         }
       }
     }

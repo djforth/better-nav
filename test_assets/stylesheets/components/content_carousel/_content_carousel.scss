@@ -11,28 +11,47 @@
   // layout
   position: absolute;
   top: 0;
+  bottom: 0;
   right: 0;
   left: 0;
   z-index: 1;
 
   a {
     @include transition(opacity 0.2s ease-in-out);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
     
     &.disabled {
       cursor: not-allowed;
-      opacity: 0.1;
+      opacity: 0.5;
     }
   }
 
   li {
     position: absolute;
+    top: 0;
+    bottom: 0;
 
     &.next {
-      right: 0;
+      right: 45px;
+
+      a {
+        @include sprite($arrow-content-carousel-next);
+      }
     }
 
     &.previous {
       left: 0;
+
+      a {
+        @include sprite($arrow-content-carousel-previous);
+      }
+    }
+
+    a {
+      display: block;
     }
   }
 

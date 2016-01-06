@@ -1,0 +1,69 @@
+article {
+  &.membership-preview {
+    // layout
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    text-align: center;
+
+    // styling
+    background-color: $membership-preview-bg;
+    border: 1px solid $membership-preview-border;
+    box-shadow: 0 0 10px 5px $membership-preview-shadow;
+
+    h1 {
+      // reset
+      @include reset-normalize;
+
+      // styling
+      color: $membership-preview-heading-text;
+    }
+
+    header {
+      @include linear-gradient(top, $membership-preview-header-bg-1, $membership-preview-header-bg-2);
+    }
+
+    li {
+      span {
+        display: inline-block;
+
+        &.description {
+          margin-left: 5px;
+        }
+
+        &.title {
+          // layout
+          margin-right: 5px;
+
+          // styling
+          color: $membership-preview-dt-text;
+        }
+      }
+    }
+
+    li, ul {
+      // reset
+      @include reset-normalize;
+    }
+
+    .pricing {
+      @include linear-gradient(left, $membership-preview-pricing-bg-1, $membership-preview-pricing-bg-2);
+      box-shadow: 0 0 10px 5px $membership-preview-pricing-shadow;
+      color: $membership-preview-pricing-text;
+
+      span {
+        &.per-month {
+          display: block;
+          text-align: left;
+        }
+      }
+
+      .pricing-left {
+        margin-right: 5px;
+      }
+
+      .pricing-left, .pricing-right {
+        display: inline-block;
+      }
+    }
+  }
+}

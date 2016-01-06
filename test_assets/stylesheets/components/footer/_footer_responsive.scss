@@ -2,6 +2,24 @@ footer {
   &.main {
     @include breakpoint($mobile-breakpoint) {
       section {
+        &.sign-up {
+          input[type="submit"] {
+            float: right;
+          }
+
+          .email, .first-name {
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      .footer-footer {
+        background-color: $footer-footer-bg-2;
+      }
+    }
+
+    @include breakpoint($mobile-and-tablet-breakpoint) {
+      section {
         &.footer-about, &.footer-information, &.footer-location, &.footer-offer {
           margin-bottom: 20px;
 
@@ -17,14 +35,23 @@ footer {
           }
         }
       }
-
-      .footer-footer {
-        background-color: $footer-footer-bg-2;
-      }
     }
 
     @include breakpoint($tablet-breakpoint) {
-      
+      section {
+        &.sign-up {
+          @include span(10 of 10);
+          position: relative;
+
+          .email {
+            @include span(3 of 10); 
+          }
+
+          .first-name {
+            @include span(3 of 10);
+          }
+        }
+      }
     }
 
     @include breakpoint($tablet-and-desktop-breakpoint) {
@@ -39,6 +66,13 @@ footer {
 
           // styling
           background-color: $footer-border-3;
+        }
+
+        &.sign-up {
+          input[type="submit"] {
+            position: absolute;
+            bottom: 0;
+          }
         }
       }
 
@@ -63,7 +97,16 @@ footer {
           @include span(2 of 10);
 
           &.sign-up {
-            @include span(6 of 10);
+            @include span(10 of 10);
+            position: relative;
+
+            .email {
+              @include span(2 of 10); 
+            }
+
+            .first-name {
+              @include span(2 of 10);
+            }
           }
         }
       }

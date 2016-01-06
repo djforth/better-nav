@@ -6,6 +6,13 @@
 
   // layout
   @include clearfix;
+
+  z-index:1000;
+}
+
+.desktopNav{
+  z-index:1000;
+  overflow: hidden;
 }
 
 .primary-nav-list {

@@ -1,0 +1,39 @@
+article {
+  &.membership-benefit {
+    @include breakpoint($mobile-breakpoint) {
+      @include span(4 of 4 last);
+    }
+
+    @include breakpoint($tablet-breakpoint) {
+      @include span(5 of 10);
+
+      &:nth-child(even) {
+        @include last;
+      }
+    }
+
+    @include breakpoint($desktop-breakpoint) {
+      @include span(12 of 12 last);
+
+      &:nth-child(even) {
+        .image-container {
+          @include span(6 of 12 last);
+        }
+
+        .text-container {
+          @include span(6 of 12);
+        }
+      }
+
+      &:nth-child(odd) {
+        .image-container {
+          @include span(6 of 12);
+        }
+
+        .text-container {
+          @include span(6 of 12 last);
+        }
+      }
+    }
+  }
+}
