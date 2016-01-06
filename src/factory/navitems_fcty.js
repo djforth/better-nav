@@ -49,30 +49,30 @@ function findNavItem(navitems, id, item){
   }, item);
 }
 
-function processItems(data, setActive, level=0){
+function processItems(data, isActive, level=0){
   if(!data) return null;
   return _.map(data, (ni)=>{
     ni        = add_id(ni);
     ni.level  = level;
-    ni.active = setActive(ni.path);
+    ni.active = isActive(ni.path);
     if(_.has(ni, "sub")){
-      ni.sub = processItems(ni.sub, setActive, level+1);
+      ni.sub = processItems(ni.sub, isActive, level+1);
     }
     return ni;
   });
 }
 
-function setActive(data, id){
+function setActive(data, id, isActive){
   let active = false;
   data = _.map(data, (ni)=>{
-    ni.active = (ni.id === id);
+    ni.active = (_.isNull(id)) ? isActive(ni.path) : (ni.id === id);
     if(ni.active){
       active = true;
       return ni;
     }
 
     if(_.has(ni, "sub")){
-      let sub = setActive(ni.sub, id);
+      let sub = setActive(ni.sub, id, isActive);
       if(sub.active){
         ni.sub = sub.data
         ni.active = active =  sub.active;
@@ -86,8 +86,8 @@ function setActive(data, id){
 }
 
 module.exports = function(data){
-  // isActive = CheckActive();
-  let navitems = processItems(data, CheckActive());
+  let isActive = CheckActive();
+  let navitems = processItems(data, isActive);
 
 
   navitems = _.map(navitems, (ni)=>{
@@ -104,7 +104,7 @@ module.exports = function(data){
       if(item && _.has(item, "sub")) return item.sub;
     }
     , setActive:(id)=>{
-      navitems = setActive(navitems, id).data;
+      navitems = setActive(navitems, id, isActive).data;
     }
     , getRoots:()=>navitems
     , getLevels:()=>{
