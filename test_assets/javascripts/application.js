@@ -16,7 +16,7 @@ const MainNav = require("../../src/components/main_nav");
 
 ReactDom.render(
   <MainNav navitemsApi="/api/test.json"
-  navitems={navitems} />,
+  navitems={[]} />,
   document.getElementById('primary-nav')
 );
 

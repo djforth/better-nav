@@ -128,7 +128,7 @@ class MobileNav extends React.Component {
     let links = this._getVisible();
     if(checker.checkArray(links)){
       return _.map(links, (ni)=>{
-        return (<Navitem key={ni.id} ref={ni.id} item={ni} onClick={this._nextLevel.bind(this)} device={this.props.device} />);
+        return (<Navitem key={ni.id} item={ni} onClick={this._nextLevel.bind(this)} device={this.props.device} />);
       });
     }
 
