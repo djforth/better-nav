@@ -122,7 +122,7 @@
   "dependencies": {
     "ajax-es6-module": "git://github.com/djforth/ajax-es6-module.git",
     "classnames": "^2.2.1",
-    "datamanager": "git://github.com/djforth/datamanager.git",
+    "datamanager": "0.0.16",
     "morse-react-mixins": "git://github.com/djforth/morse-react-mixins.git",
     "immutable": "^3.7.5",
     "lodash": "^3.10.1",

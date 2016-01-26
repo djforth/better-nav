@@ -54,7 +54,7 @@ class MobileNav extends React.Component {
   }
 
   _getPrevious(){
-    return (this.state.previous.length > 0 ) ? this.state.previous[this.state.level] : null;
+    return this.state.previous[this.state.level];
   }
 
   _getVisible(){
