@@ -1,6 +1,6 @@
 {
   "name": "better-nav",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "nav for Better website (Not better nav)",
   "main": "index.js",
   "babel": {
