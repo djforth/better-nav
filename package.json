@@ -122,7 +122,7 @@
   "dependencies": {
     "ajax-es6-module": "0.0.8",
     "classnames": "^2.2.1",
-    "datamanager": "0.0.16",
+    "datamanager": "0.0.18",
     "morse-react-mixins": "0.1.11",
     "immutable": "^3.7.5",
     "lodash": "^3.10.1",
