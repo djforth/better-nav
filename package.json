@@ -129,7 +129,7 @@
     "normalize.css": "^3.0.3",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "touch-nav": "1.0.16",
+    "touch-nav": "1.0.17",
     "viewport-detection-es6": "0.0.9"
   }
 }
