@@ -120,16 +120,16 @@
     "watchify": "^3.6.1"
   },
   "dependencies": {
-    "ajax-es6-module": "git://github.com/djforth/ajax-es6-module.git",
+    "ajax-es6-module": "0.0.8",
     "classnames": "^2.2.1",
     "datamanager": "0.0.16",
-    "morse-react-mixins": "git://github.com/djforth/morse-react-mixins.git",
+    "morse-react-mixins": "0.1.11",
     "immutable": "^3.7.5",
     "lodash": "^3.10.1",
     "normalize.css": "^3.0.3",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "touch-nav": "git://github.com/djforth/touch-nav.git",
-    "viewport-detection-es6": "git://github.com/djforth/viewport-detection-es6.git"
+    "touch-nav": "1.0.16",
+    "viewport-detection-es6": "0.0.9"
   }
 }
