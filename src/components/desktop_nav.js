@@ -43,7 +43,8 @@ class DesktopNav extends React.Component {
   _renderLinks(items, cb){
     if(checker.checkArray(items)){
       return _.map(items, (ri)=>{
-        return (<Navitem key={ri.id} ref={ri.id} item={ri} mouseEnter={cb} device={this.props.device} />);
+        // console.log(ri.id)
+        return (<Navitem key={ri.id} item={ri} mouseEnter={cb} device={this.props.device} />);
       })
     }
 
@@ -58,7 +59,7 @@ class DesktopNav extends React.Component {
           <div className="nav-list level-1">
             {this._renderTitle(root, "home-link")}
             <TouchNav
-              ref      = "touch-nav"
+              ref      = "touch-nav-main"
               navitems = {NavItemsStore.prepForTouchNav(this.state.secondary)}
               ul_css   = "secondary-nav-touch-list"
               main_css = "touch-sub-nav"
@@ -172,9 +173,9 @@ class DesktopNav extends React.Component {
           </ul>
         </div>
         <div className="clearfix sub-holder single">
-          {this._renderSecondary()}
-          {this._renderTertiary()}
-          {this._renderQuaternary()}
+          <span>{this._renderSecondary()}</span>
+          <span>{this._renderTertiary()}</span>
+          <span>{this._renderQuaternary()}</span>
         </div>
       </div>)
   }

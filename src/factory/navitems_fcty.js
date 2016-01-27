@@ -2,7 +2,7 @@ const _     = require("lodash");
 const CheckActive = require("../utils/check_active");
 
 function add_id(item){
-  item.id = _.uniqueId("navitem");
+  item.id = _.uniqueId("navitem-main");
   return item
 }
 

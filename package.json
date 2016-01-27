@@ -110,14 +110,14 @@
     "postcss-merge-longhand": "^2.0.1",
     "postcss-merge-rules": "^2.0.3",
     "react-addons-test-utils": "^0.14.3",
-    "react-tools": "^0.13.3",
     "readdirp": "^2.0.0",
     "require-dir": "^0.3.0",
     "rewireify": "^0.2.5",
     "sinon": "^1.17.2",
     "through2": "^2.0.0",
     "uglify-js": "^2.6.1",
-    "watchify": "^3.6.1"
+    "watchify": "^3.6.1",
+    "weekly-prog": "1.0.31"
   },
   "dependencies": {
     "ajax-es6-module": "0.0.8",
